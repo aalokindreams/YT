@@ -1,0 +1,719 @@
+
+<head>
+  <title>Tyuzu</title>
+<meta charset='UTF-8'>
+<meta name='keywords' content='tyuzu,tzuyu'>
+<meta name='description' content='Have fun ...!'>
+<meta name='copyright' content='Tyuzu Inc'>
+<meta name='language' content='EN'>
+<meta name='robots' content='index,follow'>
+<meta name='author' content='Apeman'>
+<meta name='designer' content='Apeman'>
+<meta name='owner' content='Apeman'>
+<meta name='url' content='http://www.tyuzu.com'>
+<meta name='identifier-URL' content='http://www.tyuzu.com'>
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+</head>
+
+<div class="app">
+  <div class="no-int"></div>
+  <nav style="box-shadow:0px 0px 10px #ccc;">
+    <button tabindex="0" data-home="data-home">
+      <div class="btn-cnt" tabindex="-1">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px">
+          <g>
+            <polygon points="16,2 2,12 2,30 30,30 30,12 16,2"></polygon>
+          </g>
+        </svg>
+      </div>
+    </button>
+    <button tabindex="0" data-menu="data-menu">
+      <div class="btn-cnt" tabindex="-1">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px">
+          <g>
+            <line x1="2" y1="2" x2="30" y2="2"></line>
+            <line x1="2" y1="16" x2="30" y2="16"></line>
+            <line x1="2" y1="30" x2="30" y2="30"></line>
+          </g>
+        </svg>
+      </div>
+    </button>
+    <button tabindex="0" data-target="search">
+      <div class="btn-cnt" tabindex="-1">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px">
+          <g>
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="20" y1="20" x2="30" y2="30"></line>
+          </g>
+        </svg>
+      </div>
+    </button>
+  </nav>
+  <div class="panel" id="menu" data-paneltype="menu">
+    <div class="menu-items">
+      <ul>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel active level1" id="index">
+    <header>
+      <div class="app-name">Tyuzu</div>
+    </header>
+    <main>
+      <button class="fullwidth" tabindex="0" data-target="panel1">
+        <div class="btn-cnt" tabindex="-1">Basic Panel</div>
+      </button>
+      <button class="fullwidth" tabindex="0" data-target="panel2">
+        <div class="btn-cnt" tabindex="-1">Right-to-Left</div>
+      </button>
+      <button class="fullwidth" tabindex="0" data-target="panel3">
+        <div class="btn-cnt" tabindex="-1">Panel to More Panels</div>
+      </button>
+      <button class="fullwidth" tabindex="0" data-target="slideup">
+        <div class="btn-cnt" tabindex="-1">Slide Up</div>
+      </button>
+    </main>
+  </div>
+  <div class="panel" id="panel1" data-paneltype="right">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+    </header>
+    <main>
+      <h1>Basic Panel</h1>
+      <p>Spot something, big eyes, big eyes, crouch, prepare to pounce mrow. Hiss and stare at nothing then run suddenly away instantly break out into full speed gallop across the house for no reason.
+      </p>
+      <p>Hunt by meowing loudly at 5am next to human slave food dispenser sit on the laptop brown cats with pink ears lick sellotape. Burrow under covers refuse to leave cardboard box or steal the warm chair right after you get up. Jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans jumps off balcony then snatches yarn and fights with dog.</p>
+    </main>
+  </div>
+  <div class="panel" id="panel2" data-paneltype="left">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+    </header>
+    <main>
+      <h1>Right-to-Left</h1>
+      <p>This panel type is ideal for right-to-left languages.</p>
+      <h2>عربى</h2>
+      <p>بقعة شيء، عيون كبيرة، عيون كبيرة، كراوتش، الاستعداد للانقضاض مرو. هيس والتحديق في أي شيء ثم تشغيل فجأة بعيدا كسر الفور إلى فرس بأقصى سرعة عبر المنزل من دون سبب.</p>
+      <h2>עִברִית</h2>
+      <p>ספוט משהו, עיניים גדולות, עיניים גדולות, מתכופפות, מתכונן לזנק. Hiss ולטוש מבט לעבר שום דבר ואז לרוץ פתאום פתאום לפרוץ החוצה במהירות לדהור את הבית ללא סיבה.</p>
+    </main>
+  </div>
+  <div class="panel" id="panel3" data-paneltype="right">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+    </header>
+    <main>
+      <h1>Panel to More Panels</h1>
+      <button tabindex="0" data-target="panel3-1">
+        <div class="btn-cnt" tabindex="-1">Access Another Panel</div>
+      </button>
+    </main>
+  </div>
+  <div class="panel" id="panel3-1" data-paneltype="right">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+    </header>
+    <main>
+      <h1>Another Panel</h1>
+      <button tabindex="0" data-target="panel3-2">
+        <div class="btn-cnt" tabindex="-1">One More</div>
+      </button>
+    </main>
+  </div>
+  <div class="panel" id="panel3-2" data-paneltype="right">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+    </header>
+    <main>
+      <h1>Last One</h1>
+      <p>Meow all night having their mate disturbing sleeping humans. Pushes butt to face. Loves cheeseburgers groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked.</p>
+    </main>
+  </div>
+  <div class="panel" id="search" data-paneltype="right">
+    <header>
+      <button class="back" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1"></div>
+      </button>
+      <form id="form1">
+        <input type="text" name="search" placeholder="Search…"/>
+        <button type="submit" tabindex="0">
+          <div class="btn-cnt" tabindex="-1">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px">
+              <g style="stroke:#fff;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="20" y1="20" x2="30" y2="30"></line>
+              </g>
+            </svg>
+          </div>
+        </button>
+      </form>
+    </header>
+    <main>
+      <div class="searching">
+        <div class="preloader"></div>Searching…
+      </div>
+      <div class="results"></div>
+    </main>
+  </div>
+  <div class="panel" id="slideup" data-paneltype="up">
+    <header>
+      <button class="close" tabindex="0" data-prev="data-prev">
+        <div class="btn-cnt" tabindex="-1">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" x="0px" y="0px">
+            <g style="stroke:#fff;">
+              <line x1="4" y1="4" x2="28" y2="28"></line>
+              <line x1="28" y1="4" x2="4" y2="28"></line>
+            </g>
+          </svg>
+        </div>
+      </button>
+    </header>
+    <main>
+      <h1>Slide Up</h1>
+      <p>All sample text about cats in these panels came from <a href="http://catipsum.com/" target="_blank">Cat Ipsum</a>.
+      </p>
+    </main>
+  </div>
+</div>
+<style>
+:root {
+	--color: #1e90ff;
+    font-size: 18px;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body, button, input {
+	font: 1em "Nunito", sans-serif;
+	line-height: 1.5;
+}
+body {
+	background: #ddd;
+}
+a {
+	color: var(--color);
+}
+.app {
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+.app-name {
+	color: #fff;
+	font-size: 2.5em;
+	margin: auto;
+}
+form {
+	display: flex;
+	align-items: center;
+	height: 3em;
+	width: 100%;
+}
+button, input {
+	border: 0;
+    border-radius: 0.3em;
+}
+input {
+  margin-right: 0.375em;
+  width: 100%;
+  outline: none;
+  border-radius: 0;
+  height: 3em;
+  box-shadow: 3px 3px 10px #999;
+  padding: 0 25px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 300;
+  border: none;
+  color: rgba(2,179,228,0.8);}
+main {
+	height: calc(100% - 3em);
+	overflow-y: overlay;
+	padding: 1.5em 0.75em;
+}
+h1, h2, h3 {
+	font-family: "Roboto", sans-serif;
+}
+h1 {
+	font-size: 2em;
+	line-height: 1.5;
+	margin-bottom: 0.75em;
+}
+h2 {
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+h3 {
+	font-size: 1em;
+	line-height: 1.5;
+}
+p {
+	margin-bottom: 1.5em
+}
+
+/* Buttons in general and keyboard-only focus */
+button {
+	background: var(--color);
+	color: #fff;
+	display: block;
+	overflow: hidden;
+    transition: all 0.2s;
+	-webkit-appearance: none;
+}
+button > .btn-cnt {
+    padding: 0.5em 0.75em;
+}
+button[type=submit] {
+	margin: 0;
+  padding: 0.8em;
+}
+button[type=submit] > .btn-cnt {
+	padding: 0.5em;
+    width: 2em;
+	height: 2em;
+}
+button:hover > .btn-cnt {
+    background: rgba(255,255,255,0.25);
+}
+button:active > .btn-cnt,
+button:focus > .btn-cnt {
+	background: rgba(0,0,0,0.4);
+}
+button:focus, .btn-cnt:focus {
+	outline: 0;
+}
+.fullwidth {
+	width: 100%;
+  margin-bottom: 0.4em;
+}
+
+/* Headers and navigation */
+header {
+	background-color: #1e90ff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 4em;
+  box-shadow: 1px 1px 10px #ccc;
+}
+header > * {
+	margin: 0;
+}
+header + main {
+	height: calc(100% - 7em);
+}
+header button {
+	border-radius: 0;
+	color: #fff;
+}
+header button > .btn-cnt {
+	padding: 0.5em 0;
+}
+header button,
+header button:hover > .btn-cnt,
+header button:active > .btn-cnt,
+header button:focus > .btn-cnt {
+	background-color: transparent;
+}
+header button:hover > .btn-cnt {
+	opacity: 0.7;
+}
+header button:active > .btn-cnt,
+header button:focus > .btn-cnt {
+	opacity: 0.4;
+}
+nav {
+	background: #444;
+	bottom: 0;
+	display: flex;
+	z-index: 99;
+}
+nav button {
+	background: #fff;
+	border-radius: 0;
+	height: 100%;
+	width: 100%;
+}
+nav button > .btn-cnt {
+	padding: 1em;
+}
+nav button > .btn-cnt span {
+	display: block;
+	font-size: 0.7em;
+	margin-top: -1em;
+}
+.menu-items ul {
+	list-style: none;
+}
+.menu-items li {
+	line-height: 3;
+}
+.menu-items li:nth-of-type(odd) a {
+	background: rgba(0,0,0,0.4);
+}
+.menu-items li:nth-of-type(even) a {
+	background: rgba(0,0,0,0.6);
+}
+.menu-items li:hover a {
+	background: rgba(255,255,255,0.25);
+}
+.menu-items a {
+	color: #fff;
+	display: block;
+	padding: 0 0.75em;
+	text-decoration: none;
+}
+.back > .btn-cnt::before {
+	box-shadow: 3px 3px 0 #fff inset;
+	content: "";
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+}
+.close {
+	margin: auto 0 auto auto;
+}
+.close > .btn-cnt {
+	padding: 0.5em;
+}
+
+/* Search */
+.preloader,
+.preloader::before,
+.preloader::after {
+	border-radius: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	animation-fill-mode: both;
+	animation: load 1s linear infinite;
+}
+.preloader {
+	margin: calc(50% - 1.5em) auto 3em auto;
+	position: relative;
+	transform: translateZ(0);
+	animation-delay: -0.16s;
+}
+.preloader::before,
+.preloader::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+}
+.preloader::before {
+	left: -2.5em;
+	animation-delay: -0.32s;
+}
+.preloader::after {
+	right: -2.5em;
+}
+.results, .searching {
+	display: none;
+}
+.searching {
+	text-align: center;
+}
+.r-show, .s-show {
+	display: inherit;
+}
+nav, .no-int, .panel {
+	position: absolute;
+	width: 100%;
+}
+.no-int, .panel {
+	top: 0;
+}
+
+/* Panels */
+.no-int, .panel {
+	height: 100%;
+}
+.no-int {
+	visibility: hidden;
+	z-index: 97;
+}
+.no-int-true {
+	visibility: visible;
+}
+.panel {
+	background-color: #fff;
+	transition: transform 0.25s ease-out;
+	z-index: 1;
+}
+.panel[data-paneltype=right] .back > .btn-cnt {
+	padding: 1em;
+}
+.panel[data-paneltype=right] .back > .btn-cnt::before {
+	margin-right: 1em;
+	transform: rotate(-45deg);
+}
+.panel[data-paneltype=left] .back > .btn-cnt {
+	padding-right: 1em;
+}
+.panel[data-paneltype=left] .back > .btn-cnt::before {
+	margin-left: 1em;
+	transform: rotate(135deg);
+}
+.panel[data-paneltype=right] {
+	transform: translateX(100%);
+}
+.panel[data-paneltype=left] {
+	direction: rtl;
+	transform: translateX(-100%);
+}
+.panel[data-paneltype=menu],
+.panel[data-paneltype=up] {
+	transform: translateY(100%);
+}
+.panel[data-paneltype=menu] {
+	background: #444;
+	height: auto;
+	top: auto;
+	bottom: 3em;
+	z-index: 98;
+}
+.panel[data-paneltype=up] {
+	z-index: 99;
+}
+.pushed-left {
+	transform: translateX(-75%);
+}
+.pushed-right {
+	transform: translateX(75%);
+}
+.panel[data-paneltype].active {
+	transform: translateX(0);
+}
+.prev-left,
+.panel[data-paneltype].prev-left {
+	transform: translateX(-25%);
+}
+.prev-right,
+.panel[data-paneltype].prev-right {
+	transform: translateX(25%);
+}
+
+/* Icons */
+svg > * {
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 4px;
+}
+.icon {
+	width: 1.2em;
+	height: 1.2em;
+}
+.icon > * {
+	stroke: #1e90ff;
+}
+.bottom-bar button > .btn-cnt svg {
+	width: 1.25em;
+	height: 1.25em;
+}
+
+/* Animation */
+@keyframes load {
+  from, to {
+    box-shadow: 0 2.5em 0 -1em var(--color);
+  }
+  50% {
+    box-shadow: 0 2.5em 0 0 var(--color);
+  }
+}
+</style>
+<script>
+console.clear();
+$(function(){
+	var l = 1,
+		noInt = $(".no-int"),
+		menuP = $("[data-paneltype=menu]"),
+
+		// ensure only elements on current panel can be tabbed
+		setTabIndexes = function(targetEl, index) {
+			let els = ["a","button","input"];
+			for (let el in els) {
+				$(targetEl + " " + els[el]).attr("tabindex", index);
+			}
+		};
+
+	setTabIndexes(".app", -1);
+	setTabIndexes(".level" + l, 0);
+	setTabIndexes("nav", 0);
+
+	// close side with Esc if using keyboard
+	$(document).on("keydown",function(e){
+		if (e.keyCode == 27) {
+			$(".no-int").click();
+		}
+	});
+
+	noInt.on("click",function(){
+		$(this).removeClass("no-int-true");
+		menuP.removeClass("active");
+
+		setTabIndexes(".level" + l, 0);
+		setTabIndexes(".menu-items", -1);
+	});
+
+	// main panel navigation
+	$("button").on("click",function(){
+		let dt = $(this).attr("data-target"),
+			dp = $(this).attr("data-prev"),
+			dh = $(this).attr("data-home"),
+			dm = $(this).attr("data-menu");
+
+		if (dt) {
+			let dtId = $("#" + dt);
+			// prevent breadcrumbing the same panel twice
+			if (!dtId.hasClass("active")) {
+				++l;
+				let prevLvl = $(".level" + (l - 1));
+
+				dtId.addClass("active level" + l);
+
+				if (dtId.attr("data-paneltype") == "right") {
+					prevLvl.addClass("prev-left");
+
+				} else if (dtId.attr("data-paneltype") == "left") {
+					prevLvl.addClass("prev-right");
+
+				}
+			}
+
+		} else if (dp) {
+			$(".level" + l).removeClass("active level" + l);
+			--l;
+			let prevLvl = $(".level" + l);
+
+			if (prevLvl.hasClass("prev-right")) {
+				prevLvl.removeClass("prev-right");
+			} else {
+				prevLvl.removeClass("prev-left");
+			}
+		} else if (dh) {
+			let pnl = $(".panel");
+
+			if (pnl.hasClass("prev-left")) {
+				pnl.removeClass("prev-left");
+			}
+			if (pnl.hasClass("prev-right")) {
+				pnl.removeClass("prev-right");
+			}
+			for (let rl = 2; rl <= l; ++rl) {
+				$(".level" + rl).removeClass("active level" + rl);
+			}
+			l = 1;
+		} else if (dm) {
+			noInt.toggleClass("no-int-true");
+			menuP.toggleClass("active");
+
+			setTabIndexes(".level" + l, -1);
+			setTabIndexes(".menu-items", 0);
+		}
+
+		if (!dm) {
+			if (noInt.hasClass("no-int-true") && menuP.hasClass("active")) {
+				noInt.removeClass("no-int-true");
+				menuP.removeClass("active");
+			}
+			setTabIndexes(".panel:not(.level" + l + ")", -1);
+			setTabIndexes(".level" + l, 0);
+		}
+
+	});
+
+	// search
+	$("form").submit(function(){
+		let sTerm = $(this).find("input[name=search]").val().toLowerCase(),
+			fakeSTime = Math.floor(Math.random() * (1500 - 500)) + 500;
+
+		setTabIndexes(".close", 0);
+
+		$(".searching").addClass("s-show");
+		$(".results").html("");
+
+		setTimeout(function(){
+			let p2search = ["panel1","panel2","panel3"],
+				rs = [],
+				rsEl = $(".results");
+
+			// get instances of term
+			for (let p in p2search) {
+				let pMain = "#" + p2search[p] + " main";
+				if ($(pMain).html().toLowerCase().indexOf(sTerm) > -1 && sTerm != "") {
+
+					rs.push([
+						$(pMain + " > h1").html(),
+						$(pMain + " > h1 + p").html() || $(pMain + " > h1 + button .btn-cnt").html()
+					]);
+				}
+			}
+
+			$(".searching").removeClass("s-show");
+			rsEl.addClass("r-show");
+
+			// restrict displayed characters for each result
+			if (rs.length > 0) {
+				let copyLim = 64,
+					sTermExp = new RegExp(sTerm,"g");
+
+				for (let r in rs) {
+					if (rs[r][1].length > copyLim) {
+						rs[r][1] = rs[r][1].substr(0,copyLim);
+
+						let lastChar = rs[r][1][rs[r][1].length - 1];
+
+						while (lastChar != " ") {
+							rs[r][1] = rs[r][1].substr(0,rs[r][1].length - 1);
+							lastChar = rs[r][1][rs[r][1].length - 1];
+						}
+						rs[r][1] += "…";
+					}
+
+					// bold the keyword
+					for (let rp in rs[r]) {
+						rs[r][rp] = rs[r][rp].replace(sTermExp,"<strong>" + sTerm + "</strong>");
+					}
+
+					let hdg = $("<h3></h3>"),
+						lnk = $("<a href='#'></a>").html(rs[r][0]),
+						par = $("<p></p>").html(rs[r][1]);
+
+					hdg.append(lnk);
+					rsEl.append(hdg,par);
+				}
+			}
+
+			rsEl.prepend($("<p></p>").text(rs.length + " result" + (rs.length != 1 ? "s" : "") + " for \u201C" + sTerm + "\u201D"));
+
+		}, fakeSTime);
+
+		return false;
+	});
+
+	// prevent scrolling of whole document in mobile devices
+	$(document).on("touchmove", function(e) {
+		//e.preventDefault();
+	});
+});
+</script>
