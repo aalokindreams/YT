@@ -1,0 +1,120 @@
+<head>
+<title>Web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
+</head>
+<div class="app" ng-app="wikiApp" ng-controller="mainCtrl">
+  <div class="container">
+    <div class="row mt-3 mb-3">
+      <div class="col-md-12">
+      <h1 class="text-center">WikiSearch</h1>
+      </div>
+      <div class="col-md-8 push-md-2">
+        <form name="searchForm"  ng-submit="searchWiki()" >
+            <div class="input-group">
+              <span class="input-group-btn">
+       <a class="btn btn-success  btn-lg" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><span class="fa fa-random" ></span></a>
+              </span>
+              <input class="form-control" type="text" ng-model="search" placeholder="search wikipedia" />
+              <span class="input-group-btn">
+        <button class="btn btn-success btn-lg" type="submit"><span class="fa fa-search" ></span></button>
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card mt-2 mb-2" ng-repeat="output in wikiData | orderBy: 'title'">
+          <article class="card-block">
+            <h2>{{output.title}}</h2>
+            <p class="text-muted">{{output.description}}</p>
+          <a ng-href="{{output.link}}" target="_blank"></a>
+          </article>
+        </div>
+      </div>
+      <div class="col-lg-12 text-center mt-2">
+<p><small>&copy; Copyright 2017 - Designed &amp; Developed by <a href="https://codepen.io/code2eat/" target="_blank" class="text-success">Denis Junuzovic</a></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+body {
+  background: #eee;
+}
+
+h1, h2 {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #aaa;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.card {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: relative;
+  border-radius: 0;
+  border: 1px solid #aaa;
+}
+.card a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+.card:hover {
+  border-top: 10px solid #aaa;
+}
+
+.btn, input[type="text"] {
+  height: 50px;
+}
+
+input[type="submit"] {
+  color: #fff;
+}
+
+</style>
+<script>
+var api = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&search=";
+var limit = "&limit=20";
+/*if your're trying to figure out how to solve the 'Access Denied Error'
+on your freecodecamp challenge make sure you add this bit, "origin=*", in the API URL.
+*/
+
+var app = angular.module("wikiApp", []);
+
+app.controller("mainCtrl", function($scope, $http, $sce) {
+
+  $scope.search = "";
+  
+  $scope.searchWiki = function() {
+    $scope.url = api + $scope.search + limit;
+    $scope.wikiData = [];
+    /*jsonp (as opposed ot 'get') is good if you want this to work on
+    iOS Safari and IE, otherwise they block the request for security reasons*/
+    $http.jsonp($sce.trustAsResourceUrl($scope.url)).then(function(response) {
+      /*the object returned by wikipedia api is unusually structured
+      so I am doing some formatting here into a more logical object format*/
+      for (var x in response.data[1]) {
+        $scope.wikiData.push({
+          title: response.data[1][x],
+          description: response.data[2][x],
+          link: response.data[3][x]
+        });
+      }
+    });
+    $scope.search = "";
+  }
+
+});
+</script>
