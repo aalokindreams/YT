@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tyuzu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+*,.navigation__link{text-decoration:none}.navigation__link,.note,.question,.rels span{cursor:pointer}.navigation{width:100%;background:#00c73c;letter-spacing:1.2px;text-transform:capitalize;font-family:Tahoma,sans-serif;z-index:10000;box-shadow:1px 1px 10px #eaeaea}.navigation__inner{display:flex;margin:0 auto;overflow:hidden;border-left:0;border-right:0;height:33px}.toggle:checked~.navigation__inner{height:auto}.navigation__link{display:block;padding:8px 20px;font-size:14px;color:#fff}.navigation__link:hover{text-decoration:none;background:#f4f4f4;color:#000}.navigation__logo{flex-shrink:0;align-self:flex-start}.navigation__logo .navigation__link{font-weight:700}.navigation__list{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;border-top:0;border-right:0;width:100%}@media screen and (max-width:400px){.navigation__item{flex-basis:100%}}.navigation__toggle{flex-shrink:0}.navigation__toggle .navigation__link{position:relative;padding-right:50px}.navigation__toggle .navigation__link:after{content:'';position:absolute;top:14px;right:24px;width:0;height:0;border-style:solid;border-width:5px 5px 0;border-color:#000 transparent transparent}.group:after,.header-wrap:after{content:""}.toggle:checked~.navigation__inner .navigation__toggle .navigation__link:after{border-width:0 5px 5px;border-color:transparent transparent #000}.toggle{position:absolute;z-index:-1;opacity:0}body{margin:0}.row{display:inline-flex;flex-wrap:nowrap}.sidel,.sider{flex:50%;margin:.5%}.footer{text-align:center;background:#ddd}@media screen and (max-width:700px){.navbar,.row{flex-direction:column}}*{box-sizing:border-box;margin:0;padding:0}.acp-wrap:after,.cw--c:after,.cw:after,.header__logo-wrap:after{content:"";display:block;clear:both}.content__internal,.header__search-wrap{padding-left:94px;padding-right:94px}.header__logo-wrap{display:block;width:94px;position:absolute;top:0;left:0}@media only screen and (max-width:1079px){.content__internal,.header__search-wrap{padding-left:58px;padding-right:58px}.header__logo-wrap{width:58px;left:0}}@media only screen and (max-width:590px){.content__internal,.header__search-wrap{padding-left:58px;padding-right:58px}.header__logo-wrap{width:58px;left:0}.content__internal{padding-left:0!important;padding-right:0!important}}.header__logo{background-image:url(https://static-s.aa-cdn.net/img/gp/20600000024334/DjUgn0hqwzO0hw4NchiE4r66I5vutBFZQWsL0nct8gFTkzRhBIAZmyXPdtyzD4-hKGM=w300?v=1);background-size:cover;border-radius:100%}@media only screen and (min-width:1079px){.svg .header__logo{background-image:url(assets/logo_header.v107.lg.svg)}.dark-header .header__logo{background-image:url(assets/logo_header_alt.v103.lg.png)}.svg.dark-header .header__logo{background-image:url(assets/logo_header_alt.v103.lg.svg)}}@media only screen and (max-height:425px){.logo_homepage__tt{bottom:0;left:95%;top:0}}.no-touch .logo_homepage:hover .logo_homepage__tt{-moz-transition-delay:.5s;-o-transition-delay:.5s;-webkit-transition-delay:.5s;transition-delay:.5s;visibility:visible;opacity:1}.search,.search--adv{box-sizing:border-box;border-radius:0;display:block;position:relative;height:2.8em;outline:0;background-color:#fff;border-bottom:3px solid #00c73c;padding:1px}.search--no-clear{padding-right:3.5em}.search--header{background-color:#fff;height:40px}.search--header .search__input,.search--header .search__input--adv{height:36px}.search--header .search__button{font-size:18px}.lt-ie9 .search--header .search__input,.lt-ie9 .search--header .search__input--adv{line-height:40px}.search--home{font-size:14px!important}.search--home .search__clear{margin-right:3.2em}.search--hero{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;border-color:#fff;background-color:#e37151}.search--hero .search__button,.search--hero .search__button--hero,.search--hero .search__clear{color:#fff}.search--hero .search__input,.search--hero .search__input--adv{font-weight:400;color:#fff}.search--hero .search__input--adv::-moz-placeholder,.search--hero .search__input::-moz-placeholder{color:#fff;opacity:1}.search--hero .search__input--adv::-webkit-input-placeholder,.search--hero .search__input::-webkit-input-placeholder{color:#fff}.search__input,.search__input--adv{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;font-size:24px!important;font-weight:lighter;color:#333;display:block;width:100%;background:#fff;border:none;outline:0;padding:6px;height:2.54545em;z-index:1;position:relative;font-family:Raleway,Helvetica,"Droid Sans",Arial,sans-serif}.featured-article-line,body,input[value^=SEARCH]{font-family:Raleway,sans-serif}.search__input--adv:focus,.search__input:focus{outline:0}.search__input--adv::-ms-clear,.search__input::-ms-clear{display:none}.search__input--adv::-moz-placeholder,.search__input::-moz-placeholder{color:#aaa}.search__input--adv::-webkit-input-placeholder,.search__input::-webkit-input-placeholder{color:#aaa;font-size:20px;letter-spacing:1px;word-spacing:2px}.lt-ie9 .search__input,.lt-ie9 .search__input--adv{line-height:2.54545em}.search--focus .search__input--adv{opacity:1}.search__hidden{display:none}.search__button,.search__button--hero,.search__clear{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;speak:none;font-style:normal;font-weight:400!important;font-variant:normal;text-transform:none;text-decoration:none!important;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent;width:1em;display:block;cursor:pointer;background:0 0;text-align:center;border:none;height:2.45em;line-height:2.45em;position:absolute;top:0;bottom:0;right:0;left:auto;margin:auto;z-index:2;outline:0}.search--no-clear .search__clear,.search__clear.empty,.search__dropdown{display:none}.search__button--hero:active,.search__button:active,.search__clear:active{-moz-transition:none .3s ease-in-out 0s;-o-transition:none .3s ease-in-out 0s;-webkit-transition:none .3s ease-in-out;-webkit-transition-delay:0s;transition:none .3s ease-in-out 0s}.lt-ie9 .search__button,.lt-ie9 .search__button--hero,.lt-ie9 .search__clear{right:0}.lt-ie8 .search__button,.lt-ie8 .search__button--hero,.lt-ie8 .search__clear{height:auto;border:none!important}.search__clear{padding:0 .5em;line-height:1;min-width:21px;margin-right:3.6em;color:#aaa;visibility:hidden;opacity:0}.search__clear:focus,.search__clear:hover{outline:0;color:#333;visibility:visible}.search__clear:active:focus,.search__clear:active:hover{color:#de5833}.search--header.has-text.search--focus .search__clear,.search--header.has-text.search--hover .search__clear,.search--home.has-text .search__clear,.search:hover .search__clear,.search__input:focus~.search__clear{visibility:visible;opacity:.9}.lt-ie8 .search__clear{margin-right:4.6em}.is-mobile .search__clear{text-align:right}.search__button,.search__button--hero{border-radius:0;color:#fff;font-size:16px!important;height:auto;min-height:1.7em;width:40px;line-height:1.5;-webkit-font-smoothing:subpixel-antialiased;background:url(https://d30y9cdsu7xlg0.cloudfront.net/png/756363-200.png) center no-repeat;background-size:36px}.search__button--hero:focus,.search__button--hero:hover,.search__button:focus,.search__button:hover{outline:0}.lt-ie8 .search__button,.lt-ie8 .search__button--hero{height:1.96em;min-width:3em}.search--header.has-text.search--focus .search__button,.search--header.has-text.search--hover .search__button,.search--home.has-text .search__button,.search:hover .search__button,.search__input:focus~.search__button{background-color:#000;color:#fff}.search--header.has-text.search--focus .search__button:hover,.search--header.has-text.search--hover .search__button--active,.search--header.has-text.search--hover .search__button:hover,.search--home.has-text .search__button:active,.search:hover .search__button:active,.search:hover .search__button:focus,.search__button:focus,.search__button:hover{background-color:#fff}.search__button--hero{background-color:#e37151}@media (max-height:600px){.atb-extension-overlay--promote-mobile .atb-extension-overlay__mobile-image{display:none}.atb-extension-overlay--promote-mobile .atb-extension-overlay__success{padding-top:100px}}.header-wrap--show,.header__logo{display:block}.has-zcm .header{width:98.5%}.header-wrap{padding-top:5px;position:relative;z-index:15;height:55px;border-bottom:1px solid #eee;background:#fff}.poptags,body{background:#f9f9f9}.header-wrap:after{width:100%;display:block;margin-top:-2px;height:1px}.lt-ie9 .header-wrap{border-bottom:1px solid #dbdbdb}.header-wrap--with-hero{-moz-transition:top .1s ease-in-out 0s;-o-transition:top .1s ease-in-out 0s;-webkit-transition:top .1s ease-in-out;-webkit-transition-delay:0s;transition:top .1s ease-in-out 0s;position:absolute;width:100%;right:0;left:0;padding-bottom:15px;top:-102px}.has-search-focus .header-wrap--with-hero{top:0}.header-wrap--fixed{position:fixed;top:0}.header{min-height:44px}.header.cw,.header.cw--c{padding-left:0;padding-right:0}@media only screen and (max-width:864px){.has-zcm .header{margin-bottom:0;width:98%}}@media only screen and (max-width:590px){.has-zcm .header{float:none;width:auto}}.lt-ie9 .header{float:none}.header__search-wrap{position:relative;margin-bottom:3px;margin-top:1px}.header__logo-wrap{height:50px;margin:auto auto auto 3.5px}.header__logo-wrap:hover{text-decoration:none}.header__logo{height:46px;width:46px;margin:-1px auto auto}@media only screen and (min-width:1079px){.header__logo{width:50px;height:50px;margin-top:-4px}}.header__avatar,.header__praise{display:none;position:absolute;height:40px;width:40px;top:0;left:0;right:0;margin:auto}@media only screen and (min-width:1079px){.header__avatar,.header__praise{width:46px;height:46px;top:-4px}}.header__avatar{-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%}.header__search{position:relative;left:5px}.header--aside{display:block;margin:.5em 0 1em 1em;width:36px;height:40px;right:7px;position:absolute;bottom:0;top:0}.header__button,.header__button--menu{display:block;float:right;top:10px;z-index:10;font-size:30px}.header__button,.header__button--menu,.header__button--menu:focus,.header__button--menu:hover,.header__button--menu:visited,.header__button:focus,.header__button:hover,.header__button:visited{color:#000}.header--aside__msg{display:none;white-space:nowrap;position:absolute;margin:auto;right:101px;bottom:0;top:0;z-index:1;color:#34cd75;line-height:36px;font-size:13px}.header--aside__msg:after{position:absolute;right:-2.5em;top:8px;height:20px}.content__text,.header__search-wrap,.msg,.msg--box,.msg--help,.msg--info,.msg--untranslated{max-width:725px}input::placeholder{font-family:Raleway,sans-serif;font-size:20px;font-weight:lighter}input[value^=SEARCH]{font-weight:bolder;font-size:18px}#user{fill:#00c73c;stroke:#00c73c}.poptags{margin:6px 0;box-shadow:0 0 20px 0 rgba(46,61,73,.1)}.featured-article-line{padding:.5em;flex:2 1 100%;-webkit-flex:2 1 100%;background:#f9f9f9;text-shadow:2px 2px 4px rgba(0,0,0,.2)}.content{width:100%;margin:0 auto;font-size:1.1em;font-family:'Segoe UI',sans-serif}.accon{border-top:1px solid #eee;font-family:Vrinda,sans-serif}.question{position:relative;margin:0;padding:10px 10px 10px 50px;display:block;width:100%;font-weight:700}.answers,.note span{font-weight:400}.answers{background:#fafafa;padding:0 15px;margin:2px 0;height:0;overflow:hidden;font-family:'Segoe UI',sans-serif;position:relative;opacity:0;-webkit-transition:.7s ease;-moz-transition:.7s ease;-o-transition:.7s ease;transition:.7s ease}.questions:checked~.answers{height:auto;opacity:1;padding:15px}.plus{position:absolute;margin-left:10px;z-index:5;font-size:2em;line-height:100%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-transition:.3s ease;-moz-transition:.3s ease;-o-transition:.3s ease;transition:.3s ease}.double,.note{transition:transform .5s}.questions:checked~.plus{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.questions{display:none}.slidepanels{line-height:0;-webkit-column-count:4;-webkit-column-gap:4px;-moz-column-count:4;-moz-column-gap:4px;column-count:4;column-gap:4px}.cycler{position:relative}.cycler img:first-child{position:relative;z-index:1}.cycler img:not(:first-child){position:absolute;top:0;left:0}.cycler img.active{z-index:3}.slidepanels div img{width:100%!important;height:auto!important;margin-bottom:2.6%}@media (max-width:620px){.slidepanels{-moz-column-count:3;-webkit-column-count:3;column-count:3}.navigation_type_horizontal{padding-left:12%}}@media (max-width:480px){.slidepanels{-moz-column-count:2;-webkit-column-count:2;column-count:2}}#notes{border-radius:1px;overflow:hidden;padding:5px}.note{min-height:45px;padding:8px;border-radius:2px}#notes>div:nth-child(n+1){margin-bottom:6px}#notes>div:nth-last-child(2),.double .note{margin-bottom:0}.note span.green{color:#001ba0;font-weight:400;font-family:font-family: Quattrocento,Arial,sans-serif;line-height:24px;font-size:18px}.note span.blue{color:#3803b5;font-size:15px;font-style:normal;line-height:17px;font-family:"Comic Sans MS",cursive,sans-serif}.note span.red,i.red{color:#c77300}.note span.small{font-size:13px}.note span.offset{margin-left:25px}.note .line.med{color:#444;font-size:14px;font-weight:500;font-family:sans-serif}.note .line.small{color:#444;font-size:14px;font-family:'나눔고딕',NanumGothic,'맑은 고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',sans-serif}.note .line.large{margin-top:2px;font-size:24px;font-weight:400}.note .mt{margin-top:4px}.double .note{width:42.3%;float:left}.double .note:first-child{margin-right:6px}.group:after{display:table;clear:both}.tr{transform:translate(350px,0)}#no-cards{display:none;margin-top:5px}#no-cards .line{text-align:center;font-size:12px;font-weight:400;text-shadow:0 2px 1px hsla(0,0%,40%,.1)}.note ul li a{font-size:13px;padding:2px;font-color:#09f}.video-items .video-item input[type=checkbox]{float:left;margin:40px 10px 0 0}.video-items .video-item .video-thumbnail{position:relative}.video-items .video-item .video-thumbnail img{max-width:100%;height:100%}.video-items .video-item .video-thumbnail .video-state{z-index:10;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;font-size:0;overflow:hidden}.video-items .video-item .video-thumbnail .video-state .state-message{vertical-align:middle;display:inline-block;text-align:center;font-size:14px;font-weight:700;color:#fff}.video-items .video-item .video-thumbnail .video-state .vertical-fix{height:100%;vertical-align:middle;display:inline-block;width:0}.video-items .video-item .video-thumbnail .video-state .thumbnail-mask{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;background:#000}.video-items .video-item .video-thumbnail .video-state .thumbnail-mask.opacity{opacity:.7;filter:alpha(opacity=70)}.video-items .video-item .video-thumbnail .play-time{z-index:20;position:absolute;bottom:5px;right:5px;color:#fff;background:#000;font-size:11px;padding:2px 4px;-moz-opacity:.8;opacity:.8;filter:alpha(opacity=80)}.video-items .video-item .video-thumbnail .icon-hd,.video-items .video-item .video-thumbnail .icon-hd-s{z-index:20;position:absolute;top:0;right:0}.video-items .video-item .video-info .video-url a{color:#10b8e9}.video-items .video-item .video-info .video-url a:hover{text-decoration:underline}.video-items .video-title a{font-weight:700;color:#333}.video-items .video-title a:hover{text-decoration:underline;color:#10b1e0}.video-items.date .date,.video-items.play-count .play-count,.video-items.playlist .playlist,.video-items.public .public,.video-items.video-url .video-url{display:none}.video-items.puzzle{overflow:hidden;margin:.5% 0 0}.video-items.puzzle .main{margin:.5% 0 0;width:50%}.video-items.puzzle .main a{height:0;padding-bottom:56.25%}.video-items.puzzle .main a .title-text{padding:10px;font-size:16px;font-weight:700}.rels span,.tags span{font-size:14px;font-family:Montserrat,sans-serif}.video-items.puzzle li{float:left;position:relative;margin:.5% 0 0 .5%;width:24.5%;overflow:hidden;display:block}.video-items.puzzle li a{border:1px solid #ddd;display:block;position:relative;height:0;padding-bottom:56.25%;margin-bottom:-2px;margin-left:-2px;background:#000;text-align:center}.video-items.puzzle li a .title{position:absolute;bottom:0;left:0;width:100%;text-align:center}.video-items.puzzle li a .title-text{color:#fff;position:relative;z-index:100;display:block;padding:3px}.video-items.puzzle li a .title-bg{position:absolute;bottom:0;left:0;z-index:1;width:100%;height:100%;background:#000;opacity:.4;filter:alpha(opacity=40)}.video-items.puzzle li a img{position:absolute;top:0;left:0;width:100%;height:100%}@media only screen and (max-width:640px){.video-items.puzzle{border:1px solid #ddd;border-width:1px 1px 0 0}.video-items.puzzle .main{width:100%;margin:0}.video-items.puzzle .main a{margin:0}.video-items.puzzle li{margin:0;width:50%}.video-items.puzzle li a{margin:0;border:1px solid #ddd;border-width:0 0 1px 1px}.video-item .video-info>span{display:block}}.rels{padding:4px;margin:8px}.rels span{text-decoration:none;padding:2px;color:#2025d6;margin:4px;line-height:30px;background:#fafafd}.relspan{font-weight:700;color:#80db70}.allrels{display:flex;justify-content:space-between}.tags{padding:4px;margin:8px}.tags span{padding:10px 16px;color:#000;margin:6px;font-weight:700;box-shadow:0 0 1px #d4d4d4;line-height:50px}.more{background:#fff;text-align:right;padding:10px;border-top:1px solid #eee;font-family:"Segoe UI",sans-serif}.card{display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;background-color:#fff;height:auto;font-family:"Segoe UI",arial,sans-serif}.card:hover{-webkit-box-shadow:0 20px 20px rgba(0,0,0,.08);box-shadow:0 20px 20px rgba(0,0,0,.08)}.details{width:100%;border-radius:0 0 10px 10px;border-top:0}.bottom,.fiddle,.middle,.top{position:relative;margin:0;padding:0 7px}.top .title{font-size:16px;font-weight:700}.middle p{margin-bottom:6px;margin-top:6px;font-size:14px}.bottom .from{color:#de6565;margin:0 0 4px}
+
+      </style>
+    </head>
+    <body>
+
+      <!-- Note -->
+      <div>
+        <div class="site-wrapper  js-site-wrapper">
+          <div id="header_wrapper" class="header-wrap js-header-wrap" style="top: 0px;">
+            <div id="header" class="header  cw">
+              <div class="header__search-wrap">
+                <a tabindex="-1" href="/?t=h_" class="header__logo-wrap js-header-logo">
+                  <span class="header__logo"></span>
+                </a>
+                <div class="header__content  header__search">
+                  <form id="search_form" class="search--adv  search--header  js-search-form has-text" name="x" action="/" method="GET">
+                    <input type="text" name="q" tabindex="1" autocomplete="off" id="search_form_input" class="search__input--adv  js-search-input" placeholder="I am looking for..." autocapitalize="off" autocorrect="off" value="Apeman">
+                    <input id="search_button" class="search__button  js-search-button" type="submit" tabindex="2" value="">
+                    <div class="search__autocomplete" style="position: absolute; display: none;">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="header--aside">
+              <a class="header__button--menu  js-side-menu-open" href="# " onclick="openNav()"><svg id="user" viewBox="0 0 32 32" width="100%" height="100%">
+                <path d="M 16 4 C 12.145852 4 9 7.1458513 9 11 C 9 13.393064 10.220383 15.517805 12.0625 16.78125 C 8.485554 18.302923 6 21.859881 6 26 L 8 26 C 8 21.533333 11.533333 18 16 18 C 20.466667 18 24 21.533333 24 26 L 26 26 C 26 21.859881 23.514446 18.302923 19.9375 16.78125 C 21.779617 15.517805 23 13.393064 23 11 C 23 7.1458513 19.854148 4 16 4 z M 16 6 C 18.773268 6 21 8.2267317 21 11 C 21 13.773268 18.773268 16 16 16 C 13.226732 16 11 13.773268 11 11 C 11 8.2267317 13.226732 6 16 6 z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <nav class="navigation">
+          <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+          <div class="navigation__inner">
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/news">News</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/services">Services</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+            </ul>
+            <div class="navigation__toggle">
+              <label class="navigation__link" for="more" aria-hidden="true">More</label>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+
+      <!-- The flexible grid (content) -->
+      <div class="row">
+        <div class="sidel">
+          <section class="poptags">
+            <article class="featured-article-line" style="text-shadow:none;">
+              <span style="font-size:18px;">Weblinks</span>
+            </article>
+            <div id="notes">
+              <div class="note">
+                <div class="line"><span class="green">Electric aircraft - Wikipedia </span></div>
+                <div class="line med mt">
+                  <span style="color:#2cb503;">https://en.wikipedia.org/wiki/Electric_aircraft</span></div>
+                  <div class="line small mt">An electric aircraft is an aircraft powered by electric motors. Electricity may be supplied by a variety of methods including; batteries, ground power cables, solar ...</div>
+                </div>
+                <div class="note">
+                  <div class="line"><span class="green">"Impossible" Electric Airplane Takes Flight - Scientific American</span></div>
+                  <div class="line med mt">
+                    <span style="color:#2cb503;">https://www.scientificamerican.com/article/impossible-electric</span></div>
+                    <div class="line small mt">"Impossible" Electric Airplane Takes Flight. The Berlin Air Show witnessed a silent, clean test flight by Airbus's E-Fan two-seater aircraft, which is entirely ...</div>
+                  </div>
+                  <div class="note">
+                    <div class="line"><span class="green">Electric planes are the future, says Paul Priestman - Dezeen</span></div>
+                    <div class="line med mt">
+                      <span style="color:#2cb503;">https://www.dezeen.com/2016/07/12/electric-planes-...</span></div>
+                      <div class="line small mt">Earlier this year aircraft manufacturer Aurora unveiled a prototype of its experimental LightningStrike - an unmanned electric aeroplane. Priestman, co-founder of ...</div>
+                    </div>
+                    <div class="note">
+                      <div class="line"><span class="green">NASA unveils plans for electric plane - The New York Times</span></div>
+                      <div class="line med mt">
+                        <span style="color:#2cb503;">https://www.nytimes.com/2016/06/18/science/nasa-electric-plane</span></div>
+                        <div class="line small mt">The agency announced plans for an all-electric airplane as part of efforts to make aviation more efficient and less of a polluter...</div>
+                      </div>
+                      <div class="note">
+                        <div class="line"><span class="green">Flying Pipistrel's Electric Airplane - YouTube</span></div>
+                        <div class="line med mt">
+                          <span style="color:#2cb503;">https://www.youtube.com/watch?v=WiADDbeFanU</span></div>
+                          <div class="line small mt">Pipistrel is taking orders for its pure-electric Alpha Electro aircraft. AVweb's Paul Bertorelli recently went to Slovenia to fly the aircraft and prepared ...</div>
+                        </div>
+                        <div id="no-cards">
+                          <div class="line">No cards</div>
+                        </div>
+                      </div>
+                      <div class="more">
+                        <span>More Links &gt;&gt;</span>
+                      </div>
+                    </section>
+
+                    <section class="poptags">
+                      <article class="featured-article-line" style="text-shadow:none;">
+                        <span style="font-size:18px;">Q &amp;A</span>
+                      </article>
+                      <div class="content">
+                        <div class="accon">
+                          <input type="checkbox" id="question1" name="q" class="questions">
+                          <div class="plus">+</div>
+                          <label for="question1" class="question">
+                            How Aerodynamics Work?
+                          </label>
+                          <div class="answers">
+                            Aerodynamics is the study of how air resistance and drag affect an object.
+                          </div>
+                        </div>
+
+                        <div class="accon">
+                          <input type="checkbox" id="question2" name="q" class="questions">
+                          <div class="plus">+</div>
+                          <label for="question2" class="question">
+                            How Do Birds Fly?
+                          </label>
+                          <div class="answers">
+                            short!
+                          </div>
+                        </div>
+
+                        <div class="accon">
+                          <input type="checkbox" id="question3" name="q" class="questions">
+                          <div class="plus">+</div>
+                          <label for="question3" class="question">
+                            How does an owl fly silently?
+                          </label>
+                          <div class="answers">
+                            This is the answer!
+                          </div>
+                        </div>
+                      </div>
+                      <div class="more">
+                        <span>More Answers &gt;&gt;</span>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="sider">
+
+                    <section class="poptags">
+                      <article class="featured-article-line" style="text-shadow:none;">
+                        <span style="font-size:18px;">Photos</span>
+                      </article>
+                      <div class="slidepanels">
+                        <div id="cycler4" class="cycler">
+                          <img src="https://www.1800flowers.com/blog/wp-content/uploads/2017/06/dahlia-flowers-orange-purple.jpg">
+                        </div>
+                        <div id="cycler1" class="cycler">
+                          <img src="https://cnet4.cbsistatic.com/img/AVSpk30o9vxRTG-eEgKHmUCbG3I=/830x467/2017/03/27/a4184fe4-5fa0-4a57-b0b2-3bb5601ef536/gsocho-ny-19-jg.jpg">
+                        </div>
+                        <div id="cycler" class="cycler">
+                          <img src="https://viralsweep.com/blog/wp-content/uploads/2015/02/unsplash.jpg">
+                        </div>
+                        <div id="cycler1" class="cycler">
+                          <img src="http://gadgetscanner.in/wp-content/uploads/2016/12/Meizu-Bezel-less-phone.jpg">
+                        </div>
+                        <div id="cycler1" class="cycler">
+                          <img src="http://planetside.co.uk/wp-content/uploads/2016/09/Terragen-4-for-educational-use-M.jpg">
+                        </div>
+                        <div id="cycler2" class="cycler">
+                          <img src="http://s3.amazonaws.com/armstrongeconomics-wp/2014/03/south-korea.jpg">
+                        </div>
+                        <div id="cycler1" class="cycler">
+                          <img src="https://hdqwalls.com/download/iron-man-minimalism-2-ap-1080x1920.jpg">
+                        </div>
+                        <div id="cycler1" class="cycler">
+                          <img src="https://i.pinimg.com/736x/27/6d/d5/276dd5b62fc9958b836a692570a8df8c--minimalist-wallpaper-cartoon-wallpaper.jpg">
+                        </div>
+                      </div>
+                      <div class="more">
+                        <span>More Images &gt;&gt;</span>
+                      </div>
+                    </section>
+                    <section class="poptags">
+                      <article class="featured-article-line" style="text-shadow:none;">
+                        <span style="font-size:18px;">Videos</span>
+                      </article>
+                      <ul class="video-items puzzle">
+                        <li class="main">
+                          <a href="/ch/loootta/v/5608933">
+                            <img alt=" " src="http://i2.cdn.turner.com/money/dam/assets/180207173535-videocard-ehang-drone-passenger-1280x720.jpeg">
+                            <span class="title">
+                              <span class="title-text text-ellipsis">
+                                This looks promising...
+                              </span>
+                              <span class="title-bg"></span>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/ch/191919/v/5608875">
+                            <img alt="" src="http://i2.cdn.turner.com/money/dam/assets/180329110858-new-york-auto-show-porsche-911-video-card-1280x720.jpeg">
+                            <span class="title">
+                              <span class="title-text text-ellipsis">
+                                First complementary video
+                              </span>
+                              <span class="title-bg"></span>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/ch/191919/v/5608677">
+                            <img alt="" src="https://i.ytimg.com/vi/VpnuoUvGfQ8/maxresdefault.jpg">
+                            <span class="title">
+                              <span class="title-text text-ellipsis">
+                                Second complementary video
+                              </span>
+                              <span class="title-bg"></span>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/ch/191919/v/5608066">
+                            <img alt="" src="https://i.ytimg.com/vi/Pv8vuvfrN8Y/maxresdefault.jpg">
+                            <span class="title">
+                              <span class="title-text text-ellipsis">
+                                Third complementary video
+                              </span>
+                              <span class="title-bg"></span>
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/ch/sis95/v/5552034">
+                            <img alt="" src="http://timgs.wecandeo.com/thumb/179/20131115/16/0420_1964e_00001_640_360.jpg">
+                            <span class="title">
+                              <span class="title-text text-ellipsis">
+                                Fourth complementary video
+                              </span>
+                              <span class="title-bg"></span>
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="more">
+                        <span>More Videos &gt;&gt;</span>
+                      </div>
+                    </section>
+
+
+                    <section class="poptags">
+                      <article class="featured-article-line" style="text-shadow:none;">
+                        <span style="font-size:18px;">Popular Tags</span>
+                      </article>
+                      <div class="tags">
+                        <span>#tesla </span>
+                        <span>#xyst </span>
+                        <span>#electric </span>
+                        <span>#future </span>
+                        <span>#china </span>
+                        <span>#VR </span>
+                        <span>#aeroplane </span>
+                        <span>#self-driving </span>
+                        <span>#bikE </span>
+                      </div>
+                      <div class="more">
+                        <span>More Tags &gt;&gt;</span>
+                      </div>
+                    </section>
+                    <section class="poptags">
+                      <article class="featured-article-line" style="text-shadow:none;">
+                        <span style="font-size:18px;">Related Keywords</span>
+                      </article>
+                      <div class="rels">
+                        <span> first keyword</span><br>
+                        <span> another one</span><br>
+                        <span> maybe this</span><br>
+                        <span> or could be this</span><br>
+                        <span> is that okay</span><br>
+                        <span> try this one</span><br>
+                      </div>
+                      <div class="more">
+                        <span>More Keywords &gt;&gt;</span>
+                      </div>
+                    </section>
+
+
+                  </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="footer">
+                  <div class="card">
+                    <div class="image">
+                      <img src="https://scontent-bom1-1.cdninstagram.com/vp/bf777dc68035abe9515cc88f9795f946/5B6ECC6C/t51.2885-15/e35/29736884_1930661593898898_8759596262732333056_n.jpg" style="width:100%;">
+                    </div>
+                    <div class="details">
+                      <div class="top">
+                        <p class="title">Jacket white</p>
+                      </div>
+                      <div class="middle">
+                        <p class="description">This looks really good! I want to try it out</p>
+                      </div>
+                      <div class="bottom">
+                        <p class="from">www.puma.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </body>
+              </html>
