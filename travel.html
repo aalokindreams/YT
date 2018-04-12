@@ -1,0 +1,483 @@
+
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css" scoped="scoped">
+/* Multi Feed Loader /www.arlinadzgn.com */
+.list-entries{background:white;border:1px solid #d8d8d8}
+.list-entries ul,.list-entries li{margin:0;padding:0;list-style:none}
+.list-entries li{padding:1em;border-bottom:1px solid #ddd}
+.list-entries .main-title{padding:0}
+.list-entries .main-title h4{display:block;font:inherit;font-weight:bold;padding:.5em 1em;background-color:#4f93c5;color:#fff;margin:0;line-height:normal;font-size:14px;margin-top:0!important}
+.list-entries .title a{font-weight:300;font-size:14px;text-decoration:none;line-height:2.5em;color:#222}
+.list-entries .title a:hover{text-decoration:underline;color:#5886a7}
+.list-entries img,.list-entries .fake-img{border:none;background-color:#333;margin:0 1em 0 0;padding:0;float:left}
+.list-entries .summary{overflow:hidden;color:#999}
+.list-entries .more-link{border-bottom:none}
+.list-entries .more-link a{display:block;line-height:2em;height:2em;overflow:hidden;text-decoration:none;background-color:#82b965;padding:.5em 1em;position:relative;font-weight:bold;color:white}
+.list-entries .more-link a:after{content:"";width:0;height:0;position:absolute;top:50%;right:.3em;border:4px solid transparent;border-left-color:white;margin-top:-4px}
+.list-entries .more-link a:hover{background-color:#71a555}
+.list-entries{margin-bottom: 10px;width:100%;float:left;font-size:11px}
+</style>
+<script type="text/javascript">
+var multiFeed = {
+    feedsUri: [
+        {
+            name: "Travel",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Travel"
+        },
+        {
+            name: "Labels",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Labels"
+        },
+        {
+            name: "Lifestyle",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Lifestyle"
+        },
+        {
+            name: "Travel",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Travel"
+        },
+        {
+            name: "Labels",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Labels"
+        },
+        {
+            name: "Lifestyle",
+            url: "https://invisiontheme.blogspot.com/",
+            tag: "Lifestyle"
+        }
+    ],
+    numPost: 4,
+    showThumbnail: true,
+    showSummary: true,
+    summaryLength: 80,
+    titleLength: "auto",
+    thumbSize: 72,
+    containerId: "feed-list-container",
+    readMore: {
+        text: "Selengkapnya",
+        endParam: "?max-results=8"
+    }
+};
+</script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Arlina-Design/nubie/master/multifeedblog.js"></script>
+<div style='clear: both;'></div>
+</div>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<!-- DEMO -->
+<nav>
+  <div class="inner">
+    <div class="logo">TYUZU</div>
+    <input class="search_box" type=search placeholder="Search...">
+    <div class="search"><i class="fa fa-search"></i></div>
+    <ul>
+      <li><a href="#">Home <i class="fa fa-home"></i></a></li>
+      <li><a href="#">Images <i class="fa fa-photo"></i></a></li>
+      <li><a href="#">News <i class="fa fa-newspaper-o"></i></a></li>
+      <li><a href="#">Music <i class="fa fa-music"></i></a></li>
+      <li><a href="#">Videos <i class="fa fa-video-camera"></i></a></li>
+      <li><a href="#">Travel <i class="fa fa-taxi"></i></a></li>
+      <li><a href="#">Map <i class="fa fa-map-marker"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="navigation">
+          <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+          <div class="navigation__inner">
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/news">News</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/services">Services</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+            </ul>
+            <div class="navigation__toggle">
+              <label class="navigation__link" for="more" aria-hidden="true">More</label>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+<div id="feed-list-container"></div><div style="clear:both;"></div>
+</div>
+
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+  background: #f1f1f1 none repeat scroll top left;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  line-height: normal;
+}
+
+a,
+a:visited {
+  color: #555;
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:visited:hover {
+  color: #22a1c4;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 810px;
+  margin: 5% auto;
+  color: #95a5a6;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: normal;
+}
+
+aside#bott{font-family: 'Open Sans', sans-serif;position:static;left:0;right:0;bottom:0;margin:5% auto 0 auto;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(26,188,156,.9);color:#fff;padding:1em}
+aside span.bott{color:inherit;text-decoration:none;font-weight:normal;display:inline-block;padding:.4em 1em}
+.navigation {
+  width: 100%;
+  background: #fff;
+  letter-spacing: 1.2px;
+  text-transform: capitalize;
+  z-index: 10000;
+  box-shadow: 1px 1px 10px #eaeaea;
+}
+
+.navigation__inner {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+  border-left: 0;
+  border-right: 0;
+  height: 33px;
+}
+
+.toggle:checked ~ .navigation__inner {
+  height: auto;
+}
+
+.navigation__link {
+  display: block;
+  padding: 8px 20px 8px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.navigation__link:hover {
+  text-decoration: none;
+  background: #f4f4f4;
+  color: #000;
+}
+
+.navigation__logo {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.navigation__logo .navigation__link {
+  font-weight: bold;
+}
+
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 0;
+  border-right: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .navigation__item {
+    flex-basis: 100%;
+  }
+}
+
+.navigation__toggle {
+  flex-shrink: 0;
+}
+
+.navigation__toggle .navigation__link {
+  position: relative;
+  padding-right: 50px;
+}
+
+.navigation__toggle .navigation__link:after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #000 transparent transparent transparent;
+}
+
+.toggle:checked ~ .navigation__inner .navigation__toggle .navigation__link:after {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #000 transparent;
+}
+
+.toggle {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+</style>
+
+<style>
+.logo {
+  float: left;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  height: 0px;
+  border-bottom: 100px solid #860255;
+  position: relative;
+  margin: 0 auto;
+  /*box-shadow: 20px 17px 27px rgba(0, 0, 0, 0.15);*/
+}
+nav::before {
+  content: '';
+  display: block;
+}
+nav .inner {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  background: #860255;
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #860255), color-stop(100, #EF4B3F));
+  /* IE10+ */
+  background-image: -ms-linear-gradient(left, #860255 0%, #EF4B3F 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(left, #860255 0%, #EF4B3F 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(left, #860255 0%, #EF4B3F 100%);
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(left, #860255 0%, #EF4B3F 100%);
+  /* W3C Markup */
+  background-image: linear-gradient(to right, #860255 0%, #EF4B3F 100%);
+}
+nav .active {
+  top: 80px !important;
+  position: relative;
+  transition: all .3s;
+}
+nav ul {
+  float: right;
+  list-style-type: none;
+  line-height: 6.2;
+  padding: 0;
+  margin: 0;
+  transition: all .3s;
+  position: relative;
+  top: 0;
+}
+nav li {
+  display: inline-block;
+  margin: 0;
+}
+nav li::before {
+  content: ' / ';
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+nav li:first-child::before {
+  display: none;
+}
+nav .search {
+  width: 80px;
+  height: 0px;
+  float: right;
+  color: #fff;
+  font-size: 18px;
+  border-bottom: 100px solid rgba(0, 0, 0, 0.1);
+  border-left: 40px solid transparent;
+  position: relative;
+  transition: .3s;
+}
+nav .search::before {
+  content: '';
+}
+nav .search:hover {
+  border-bottom: 100px solid rgba(0, 0, 0, 0.3);
+}
+nav .fa-search {
+  position: relative;
+  left: 25px;
+  top: 38px;
+}
+nav input[type=search] {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  -webkit-appearance: none;
+}
+nav input.search_box {
+  position: absolute;
+  font-size: 16px;
+  color: #fff;
+  line-height: 4;
+  top: -100px;
+  width: 50%;
+  right: 130px;
+  transition: all .3s;
+}
+nav .search_box_active {
+  top: 15px !important;
+  transition: all .3s;
+}
+nav input:focus {
+  outline: none;
+}
+nav input::-webkit-input-placeholder {
+  color: #fff;
+}
+nav input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1px;
+  width: 15px;
+  background: transparent;
+  border-radius: 50%;
+}
+nav input[type="search"]::-webkit-search-cancel-button::before {
+  content: '+';
+  color: #fff;
+  font-weight: bold;
+  -webkit-transform: rotate(45deg);
+  font-size: 21px;
+  position: absolute;
+  top: -10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script>
+// Search Toggle //
+$( ".search" ).click(function() {
+ $( "ul" ).toggleClass( "active" );
+ $( ".search_box" ).toggleClass( "search_box_active" );
+});
+</script>
+<div id="gallery"></div>
+<style>
+#gallery {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.thumbnail-wrapper {
+  background-color: #333;
+  min-width: 12rem;
+  min-height: 8rem;
+  position: relative;
+  flex: 1;
+  flex-basis: 8rem;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+.thumbnail-wrapper:nth-child(5n) {
+  flex-basis: 14rem;
+}
+
+.thumbnail-wrapper:nth-child(2n+1) {
+  flex-basis: 10rem;
+}
+
+.thumbnail-wrapper:nth-child(7n+4) {
+  flex-basis: 20rem;
+  min-height: 12rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.thumbnail:hover {
+  opacity: 0.9;
+  transition: .2s ease-in;
+}
+</style>
+<script>
+
+var images = [
+  "https://i.imgur.com/KaPoFDj.jpg", "https://i.pinimg.com/564x/9b/ea/67/9bea67b08810012f4f30878a11a2f6ef.jpg",
+  "http://farm9.staticflickr.com//8868//18205140545_c48ca49018_h.jpg",
+  "http://drscdn.500px.org/photo/111857581/m%3D2048/2ecfe0e70accd597de673b532e8a8666", "http://fc02.deviantart.net/fs70/f/2014/029/9/1/rophaien_by_tobiasrichter-d4tniwk.jpg",
+  "https://i.imgur.com/CQg225T.jpg",
+  "http://farm3.staticflickr.com//2946//15449458345_4457eacb17_b.jpg",
+  "https://i.imgur.com/Y2802th.jpg",
+  "https://i.imgur.com/KZsmUi2.jpg"
+];
+
+var gallery = document.getElementById("gallery");
+
+for (var i = 0; i < images.length; i++) {
+  var thumbnailWrapper = document.createElement("div");
+  thumbnailWrapper.className = "thumbnail-wrapper";
+
+  var thumbnail = document.createElement("a");
+  thumbnail.className = "thumbnail";
+  thumbnail.setAttribute('style', 'background-image:url(\"' + images[i] + '\");');
+  thumbnail.setAttribute('href', images[i]);
+
+  thumbnailWrapper.appendChild(thumbnail);
+  gallery.appendChild(thumbnailWrapper);
+}
+
+console.log(gallery)
+</script>
+
+<aside id="bott">
+  <footer>Copyright (c) 2018 TYUZU Inc. All Rights Reserved.</footer>
+</aside>
