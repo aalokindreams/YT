@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Node Website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+.header-fixed {
+	background-color:ffffff;
+	box-shadow:0 1px 1px #ccc;
+	padding: 20px 40px;
+	height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top:-100px;
+
+	-webkit-transition:top 0.3s;
+	transition:top 0.3s;
+}
+
+.header-fixed .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*	The header placeholder. It is displayed when the header is fixed to the top of the
+	browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder{
+	height: 80px;
+	display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+	float: left;
+	font: normal 28px Raleway, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+	color: #5383d3;
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+	font:16px "Raleway", Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: right;
+}
+
+.header-fixed .header-limiter nav a{
+	display: inline-block;
+	padding: 0 5px;
+	text-decoration:none;
+	color: #000000;
+  font-weight: bold;
+	opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover{
+	opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+	color: #608bd2;
+	pointer-events: none;
+	opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+	padding: 10px 40px;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #ffffff;
+}
+
+body.fixed .header-fixed-placeholder {
+	display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+	line-height: 28px;
+	font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+	.header-fixed {
+		padding: 20px 0;
+		height: 75px;
+	}
+
+	.header-fixed .header-limiter h1 {
+		float: none;
+		margin: -8px 0 10px;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	.header-fixed .header-limiter nav {
+		line-height: 1;
+		float:none;
+	}
+
+	.header-fixed .header-limiter nav a {
+		font-size: 13px;
+	}
+
+	body.fixed .header-fixed {
+		display: none;
+	}
+
+}
+
+#mainshead h1{
+  color: white;
+	font-size: 2em;
+}
+#mainshead h3{
+  color: white;
+	font-size: 1em;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: normal 28px Raleway, Arial, Helvetica, sans-serif;
+}
+
+.hero {
+  background-image: url(https://rimaone.com/wp-content/uploads/2015/12/Header-rimaone.jpg);
+  background-repeat: no-repeat;;
+  background-size: cover;
+  background-position: center center;
+  padding: 50px 0;
+  min-height: 320px;
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  width: 100%;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+
+header {
+  padding: 0 15px;
+}
+@media screen and (min-width: 768px)
+.container .jumbotron, .container-fluid .jumbotron {
+     padding-right: 0px;
+     padding-left: 0px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+     padding-right: 0px;
+     padding-left: 0px;
+     border-radius: 0px;
+}
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.column {
+  flex: 1;
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+}
+.column:first-child {
+  margin-left: 0;
+}
+.column:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .columns .column {
+    margin-bottom: 5px;
+    flex-basis: 40%;
+  }
+  .columns .column:nth-last-child(2) {
+    margin-right: 0;
+  }
+  .columns .column:last-child {
+    flex-basis: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 680px) {
+  .columns .column {
+    flex-basis: 100%;
+    margin: 0 5px 5px 5px;
+  }
+}
+.hero-content h2 {
+  color: #FFF;
+  font-size: 80px;
+}
+.jumbotron {
+	background-color: #ffffff;
+}
+.hero-content p {
+  color: #FFF;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.hero-content .btn {
+  border-radius: 2px;
+  padding: 20px 30px;
+}
+
+main {
+
+}
+.container {
+	padding-right: 0px;
+    padding-left: 0px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  max-width: 1146px;
+  padding: 20px 20px 40px;
+  margin: 0 auto;
+}
+
+footer {
+  position: relative;
+  background-color: #242424;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+}
+footer .inner {
+  display: flex;
+}
+footer .copyright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 20%;
+  color: #ccc;
+	font-size: 1.8em;
+}
+footer .meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+}
+footer .meta ul {
+  list-style-type: none;
+  color: #fff;
+}
+footer .meta .links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 20px;
+	font-size: 1.8em;
+  width: 70%;
+}
+footer .meta .icons {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'FontAwesome';
+  width: 20%;
+}
+
+@media screen and (max-width: 645px) {
+  footer .copyright {
+    align-items: flex-end;
+  }
+  footer .meta {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  footer .meta .links {
+    order: 2;
+    width: 80%;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+  }
+  footer .meta .icons {
+    order: 1;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  footer .meta .icons li:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  footer .inner {
+    flex-direction: column;
+  }
+  footer .copyright {
+    position: relative;
+    margin: 0 0 20px 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+  footer .copyright:after {
+    content: "";
+    position: absolute;
+    margin: 10px 0 0 0;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background-color: #505050;
+  }
+  footer .meta {
+    margin: 15px 0 0 0;
+    width: 100%;
+    flex-direction: row;
+  }
+  footer .meta .links {
+    margin: 0;
+    order: 1;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  footer .meta .links li:not(:last-child) {
+    margin: 0 0 15px 0;
+  }
+  footer .meta .icons {
+    order: 2;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  footer .meta .icons li:not(:last-child) {
+    margin: 0 0 15px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <header class="header-fixed">
+
+    <div class="header-limiter">
+
+      <h1><a href="#">Website<span>NAME</span></a></h1>
+
+      <nav>
+        <a href="./home">Home</a>
+        <a href="./about" class="selected">Subjects</a>
+        <a href="./notes">Notes</a>
+        <a href="./lectures">Lectures</a>
+        <a href="./pricing">Pricing</a>
+        <a href="./Login">LogIn</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- You need this element to prevent the content of the page from jumping up -->
+  <div class="header-fixed-placeholder"></div>
+
+  <!-- The content of your page would go here. -->
+
+  <!-- MAIN CONTENT HERE -->
+  
+<section class="hero">
+  <div class="hero-content">
+<div id="mainshead">
+<h1>This is the mission statement.</h1>
+<h3>"Here goes the explanation of their mission statement"</h3>
+</div>
+  </div>
+</section>
+
+
+  <main>
+    <div class="container">
+      
+<div class="jumbotron text-center">
+  <div class="wrapper">
+
+<section class="columns">
+
+	<div class="column">
+		<h2>1st Content Area</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ratione architecto necessitatibus cum praesentium dolor totam voluptatibus recusandae?</p>
+	</div>
+
+	<div class="column">
+		<h2>2nd Content Area</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ratione architecto necessitatibus cum praesentium dolor totam voluptatibus recusandae? Illo quod nemo ratione itaque dolores laudantium error vero laborum blanditiis nostrum.</p>
+	</div>
+
+  <div class="column">
+		<h2>3rd Content Area</h2>
+		<p>Illo quod nemo ratione itaque dolores laudantium error vero laborum blanditiis nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ratione architecto cum praesentium voluptatibus recusandae?</p>
+	</div>
+
+</section>
+
+
+</div>
+</div>
+
+    </div>
+  </main>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+
+  $(document).ready(function(){
+
+    var showHeaderAt = 60;
+
+    var win = $(window),
+    body = $('body');
+
+    // Show the fixed header only on larger screen devices
+
+    if(win.width() > 400){
+
+      // When we scroll more than 150px down, we set the
+      // "fixed" class on the body element.
+
+      win.on('scroll', function(e){
+
+        if(win.scrollTop() > showHeaderAt) {
+          body.addClass('fixed');
+        }
+        else {
+          body.removeClass('fixed');
+        }
+      });
+
+    }
+
+  });
+
+  </script>
+
+
+</body>
+
+<footer>
+  <div class="row inner">
+    <span class="copyright">
+      &copy; 2018 Aalok Yadav
+    </span>
+
+    <span class="meta">
+      <ul class="links">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+        <li>Six</li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <span class="fab fa-2x fa-facebook-f"></span>
+        </li>
+        <li>
+          <span class="fab fa-2x fa-youtube-play"></span>
+        </li>
+        <li>
+          <span class="fab fa-2x fa-twitter"></span>
+        </li>
+        <li>
+          <span class="fab fa-2x fa-linkedin-square"></span>
+        </li>
+      </ul>
+    </span>
+  </div>
+</footer>
+</html>
