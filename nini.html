@@ -1,0 +1,466 @@
+
+
+<html>
+<head>
+  <title>Tyuzu</title>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='tyuzu,tzuyu'>
+  <meta name='description' content='Have fun ...!'>
+  <meta name='copyright' content='Tyuzu Inc'>
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='author' content='Apeman'>
+  <meta name='designer' content='Apeman'>
+  <meta name='owner' content='Apeman'>
+  <meta name='url' content='http://www.tyuzu.com'>
+  <meta name='identifier-URL' content='http://www.tyuzu.com'>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+  <style>
+  @import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .search {
+    padding: 10px;
+    position: relative;
+  }
+  .searchTerm {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border: 4px;
+    outline: none;
+    background: rgba(218, 218, 218, 0.3);
+    height: 48px;
+    padding: 12px;
+    color: #000;
+    font-size: 1.1em;
+  }
+
+
+  ul {
+    text-decoration: none;
+    text-align: center;
+    list-style-type: none;
+    width: 100% auto;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #bfffd3;
+    background: #ffffff;
+    z-index: 10000;
+    padding: 10px 20px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul li{
+    float:left;
+  }
+  ul li a{
+
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    font: 16px/1.3 sans-serif;
+    padding: 5px 20px;
+    text-transform:uppercase;
+
+  }
+
+  .form {
+    position: relative;
+  }
+  .footnav {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 100;
+  }
+  .icon {
+    width: 2em;
+    /*      stroke: #04a936;*/
+    fill: #04a936;
+    height: 2em;
+  }
+
+  .navigation {
+    width: 100%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-family: "Verdana", sans-serif;
+    z-index: 10000;
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  .navigation__inner {
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    border-left: 0;
+    border-right: 0;
+    height: 34px;
+    background: #fff;
+  }
+
+  .toggle:checked ~ .navigation__inner {
+    height: auto;
+  }
+
+  .navigation__link {
+    display: block;
+    padding: 8px 20px 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #777777;
+    cursor: pointer;
+  }
+
+  .navigation__link:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+  }
+
+  .navigation__logo {
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .navigation__logo .navigation__link {
+    font-weight: bold;
+  }
+
+  .navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 0;
+    border-right: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 400px) {
+    .navigation__item {
+      flex-basis: 100%;
+    }
+  }
+
+  .navigation__toggle {
+    flex-shrink: 0;
+  }
+
+  .navigation__toggle .navigation__link {
+    position: relative;
+    padding-right: 50px;
+  }
+
+  .navigation__toggle .navigation__link:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  .toggle:checked
+  ~ .navigation__inner
+  .navigation__toggle
+  .navigation__link:after {
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #777 transparent;
+  }
+
+  .toggle {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", "Helvetica", "Droid Sans", Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+  <form class="search">
+    <input class="searchTerm" placeholder="Enter your search term ...">
+  </form>
+  <nav class="navigation">
+    <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+    <div class="navigation__inner">
+      <div class="navigation__list">
+        <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/news">Travel</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+      </div>
+      <div class="navigation__toggle">
+        <label class="navigation__link" for="more" aria-hidden="true">More</label>
+      </div>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <div class="comparison">
+      <div class="square square--red">
+        <h2>Main Photo</h2>
+        <p>Some information here.</p>
+      </div>
+    </div>
+    <div class="settings">
+      <div class="square square--purple">
+        <h2>Second Photo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+      </div>
+      <div class="square square--blue">
+        <h2>Third Photo</h2>
+        <p>Anything else..!!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+  @media (min-width: 480px) {
+    .wrapper {
+      margin: .5rem;
+    }
+
+    .settings {
+      display: flex;
+      justify-content: stretch;
+    }
+    .settings .square {
+      flex: 1;
+    }
+  }
+  @media (min-width: 670px) {
+    .wrapper {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .settings {
+      flex-direction: column;
+      flex: 1;
+    }
+    .settings .square {
+      flex: none;
+    }
+
+    .comparison {
+      display: flex;
+      flex: 1;
+    }
+    .comparison .square {
+      width: 100%;
+    }
+  }
+  .square {
+    color: #fff;
+    padding: 3rem;
+    margin: .6rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+    line-height: 1.4;
+  }
+  .square h2 {
+    margin: 0;
+  }
+  .square p:last-child {
+    margin-bottom: 0;
+  }
+
+  .square--red {
+    background-image: url(https://i.pinimg.com/564x/68/28/93/68289324d01cbacd719fbc2922710e34.jpg);
+    background-position: center;
+    color: black;
+  }
+
+  .square--blue {
+    background-image: url(https://i.pinimg.com/564x/6d/18/75/6d1875acc7b9a817274e7ca51f4eba4a.jpg);
+    background-position: center;
+  }
+
+  .square--purple {
+    background-image: url(https://i.pinimg.com/564x/5a/aa/8e/5aaa8e77cbdcb6c2a36dd8c201ff3b64.jpg);
+    background-position: center;
+    color: black;
+  }
+
+
+</style>
+<div class="wraperdaper">
+  <div class="slidepanels">
+    <div id="cycler4" class="cycler">
+      <img src="https://i.pinimg.com/564x/4d/49/3e/4d493e641539f8552a39ee3dd3a8117c.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/a2/97/77/a297771c16731bb082fa07847674f1bc.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/29/45/85/294585c40b14e6a7f5fa6f2da61d8b53.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/d2/61/c3/d261c350fe4af694b0211f1b977ee2a7.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/d4/5f/ec/d45fec7fed08c887ff646c96ee6977b2.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/43/e7/45/43e7455c6a5124a4bb0c8fd299d5c356.jpg">
+    </div>
+    <div id="cycler" class="cycler">
+      <img src="https://i.pinimg.com/564x/40/c3/c9/40c3c92927b2e07f76e90c913372921a.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/f1/d6/d6/f1d6d6f62a2a5b5bd7b3b7a3261ac9d5.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/c9/6c/21/c96c212a37b98ce9380dc33e5922ea25.jpg">
+    </div>
+    <div id="cycler2" class="cycler">
+      <img src="https://i.pinimg.com/564x/a5/33/13/a533133f23473d78becae6689f1a69ec.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/a1/9a/32/a19a32d7e827b44bb79b53b8a0de0397.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/41/84/a5/4184a5d86f0cb56fdd084bd8a0734d30.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/f3/61/c8/f361c81c716c29c1b70c8d81368c651d.jpg">
+    </div>
+    <div id="cycler1" class="cycler">
+      <img src="https://i.pinimg.com/564x/b0/4a/3b/b04a3bc742ee29d3a8840331ecda47c9.jpg">
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+
+.wraperdaper{
+  margin: 1% 1% 5% 1%;
+}
+
+.slidepanels {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap:   8px;
+  -moz-column-count:    5;
+  -moz-column-gap:      8px;
+  column-count:         5;
+  column-gap:           8px;
+
+
+}
+.cycler{
+  position: relative;
+}
+
+.cycler img:first-child{
+  position: relative; z-index: 1;
+}
+
+.cycler img:not(:first-child){
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.cycler img.active{
+  z-index: 3;
+}
+
+.slidepanels div img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 3.6%;
+  border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+  .slidepanels {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .slidepanels {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1020px) {
+  .slidepanels {
+    -moz-column-count:    4;
+    -webkit-column-count: 4;
+    column-count:         4;
+  }
+  .navigation_type_horizontal {
+    padding-left: 12%;
+  }
+}
+@media (min-width: 1021px) and (max-width: 1220px) {
+  .slidepanels {
+    -moz-column-count:    5;
+    -webkit-column-count: 5;
+    column-count:         5;
+  }
+}
+</style>
+
+<div class="footnav">
+  <ul>
+    <svg class="icon icon-home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+    </svg>
+    <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+    </svg>
+    <svg class="icon icon-photo-camera" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3.2"></circle>
+      <path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+    </svg>
+    <svg class="icon icon-notifications" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+    </svg>
+    <svg class="icon icon-arrow_drop_up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+    </svg>
+  </ul>
+</div>
+</body>
+</html>
