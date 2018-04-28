@@ -1,0 +1,461 @@
+<head>
+  <title>Tyuzu</title>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='tyuzu,tzuyu'>
+  <meta name='description' content='Have fun ...!'>
+  <meta name='copyright' content='Tyuzu Inc'>
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='author' content='Apeman'>
+  <meta name='designer' content='Apeman'>
+  <meta name='owner' content='Apeman'>
+  <meta name='url' content='http://www.tyuzu.com'>
+  <meta name='identifier-URL' content='http://www.tyuzu.com'>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css"/>
+</head>
+  <div class="rowform">
+      <form class="form-inline "id="search-form" name="search-form" onSubmit="return search()">
+        <div width="100%" class="form_container">
+          <div class="d3 float-right" style="width:100%;" >
+            <input class="form-control search-field" type="search" id="query" style="width:100%;"  placeholder="Search Youtube">
+          </div>
+          <button class="mainform" type="submit" id="search-btn"  name="search-btn" value="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+			</svg>
+          </button>
+        </div>
+      </form>
+  </div>
+  <nav class="navigation">
+  <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+  <div class="navigation__inner">
+    <ul class="navigation__list">
+      <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/news">Travel</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/services">Services</a></li>
+      <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+    </ul>
+    <div class="navigation__toggle">
+      <label class="navigation__link" for="more" aria-hidden="true">More</label>
+    </div>
+  </div>
+</nav>
+<div class="content">
+  <div class="container-fluid" id="results">
+  </div> <!-- ENd of container fluid -->
+  <div class="container-fluid">
+    <div class="col-sm-12">    <div id="btn-cnt"></div> </div>
+  </div>
+</div> <!-- End of content -->
+<style>
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+.col-sm-2 {
+  padding: 10px;
+}
+svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: #ffffff;
+    stroke: #ffffff;
+    -webkit-transform: translate(0px, 2px);
+    transform: translate(0px, 2px);
+    transition: .2s ease;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.col-sm-10 {
+  padding: 10px;
+}
+.img-fluid {
+  width: 100%;
+}
+
+.row {
+display: grid;
+  border: none;
+  box-shadow: 0px 0px 20px -3px #cacaca;
+  margin: 10px;
+  width: 25%;
+}
+@media (min-width:480px)  {
+  .row {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+@media (min-width:800px) {
+    .row {
+      width: 50%;
+      margin: 10px auto;
+    }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Helvetica", "Droid Sans", Arial, sans-serif;
+  text-decoration: none;
+}
+
+.button-container {
+    display: inline-block;
+    width: 100%;
+    padding: 6px;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+}
+.total-results {
+    display: inline-block;
+    font-size: 1.1em;
+      font-family: 'Raleway', sans-serif;
+}
+.btn {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #000;
+    float: right;
+    text-align: center;
+    padding: 3px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+.form_container { display: flex;}
+@media(max-width:360px) {
+.total-results { display:block; }
+}
+.form-inline {
+  margin: 8px;
+  box-shadow: 0px 0px 20px -3px #cacaca;
+}
+.search-field {
+  box-sizing: border-box;
+      width: 100%;
+      border: 0px;
+      outline: none;
+      height: 48px;
+      padding: 1em;
+      color: #000;
+      font-size: 1.5em;
+      text-transform: capitalize;
+  }
+.mainform {
+background-color: #00c73c; /* Green */
+border: none;
+outline: none;
+color: white;
+padding: 12px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+.mainform:hover {
+background: #32cd32;
+}
+.mainform:focus {
+  background: #002c73;
+}
+        .navigation {
+          width: 100%;
+          letter-spacing: 1.2px;
+          text-transform: uppercase;
+          font-family: "Segoe UI", sans-serif;
+          z-index: 10000;
+          background: #fff;
+        }
+
+        .navigation__inner {
+          display: flex;
+          margin: 0 auto;
+          overflow: hidden;
+          border-left: 0;
+          border-right: 0;
+          height: 34px;
+          background: #fff;
+        }
+
+        .toggle:checked ~ .navigation__inner {
+          height: auto;
+        }
+
+        .navigation__link {
+          display: block;
+          padding: 8px 20px 8px 20px;
+          font-size: 14px;
+          text-shadow: 1px 1px 10px #ccc;
+          font-weight: bold;
+          text-decoration: none;
+          color: #000000;
+          cursor: pointer;
+        }
+
+        .navigation__link:hover {
+          text-decoration: none;
+          background: #fff;
+          color: #000;
+        }
+
+        .navigation__logo {
+          flex-shrink: 0;
+          align-self: flex-start;
+        }
+
+        .navigation__logo .navigation__link {
+          font-weight: bold;
+        }
+
+        .navigation__list {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          border-top: 0;
+          border-right: 0;
+          width: 100%;
+        }
+
+        @media screen and (max-width: 400px) {
+          .navigation__item {
+            flex-basis: 100%;
+          }
+        }
+
+        .navigation__toggle {
+          flex-shrink: 0;
+        }
+
+        .navigation__toggle .navigation__link {
+          position: relative;
+          padding-right: 50px;
+        }
+
+        .navigation__toggle .navigation__link:after {
+          content: "";
+          position: absolute;
+          top: 14px;
+          right: 24px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 5px 5px 0 5px;
+          border-color: #000 transparent transparent transparent;
+        }
+
+        .toggle:checked
+        ~ .navigation__inner
+        .navigation__toggle
+        .navigation__link:after {
+          border-width: 0 5px 5px 5px;
+          border-color: transparent transparent #777 transparent;
+        }
+
+        .toggle {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+
+</style>
+<script>
+$(function() {
+  $('#search-form').submit(function(e) {
+    e.preventDefault();
+  })
+});
+
+function search() {
+  //Clear any previous results
+  $('#results').html('');
+  $('#btn-cnt').html('');
+
+  //Get form input
+  var q = $('#query').val();
+
+  //Run GET Request 	on API
+  $.get(
+    "https://www.googleapis.com/youtube/v3/search",{
+      part: 'snippet, id',
+      q: q,
+      type: 'video',
+      key: 'AIzaSyAShx8QLS_bc-cvTWKPfKdNLq6P79mDifc'},
+      function(data) {
+        var nextPageToken = data.nextPageToken;
+        var prevPageToken = data.prevPageToken;
+        var pageInfo = data.pageInfo;
+
+        //Log data
+        console.log(data);
+
+        $.each(data.items, function(i, item) {
+          //Get output
+          var output = getOutput(item);
+
+          //Display results
+          $('#results').append(output);
+        });
+
+        var buttons = getButtons(prevPageToken,nextPageToken, pageInfo);
+
+        //Display buttons
+        $('#results').prepend(buttons);
+        $('#btn-cnt').append(buttons);
+      }
+    );
+  }
+
+  //Build Output
+  function getOutput(item) {
+    var videoId = item.id.videoId;
+    var title = item.snippet.title;
+    var description = item.snippet.description;
+    var thumb = item.snippet.thumbnails.high.url;
+    var channelTitle = item.snippet.channelTitle;
+    var videoDate = item.snippet.publishedAt;
+
+    //Build Output String
+    var output = '<div class="row">' +
+    '<div class="col-sm-2">' +
+    '<a data-fancybox href="https://www.youtube.com/watch?v=' + videoId + '"><img class="img-fluid" src="' + thumb + '"></a>' +
+    '</div>' +
+    '<div class="col-sm-10">' +
+    '<h4><a data-fancybox href="https://www.youtube.com/watch?v=' + videoId + '">' + title + '</a></h4>' +
+    '<small>By <span class="cTitle">' + channelTitle + '</span> on '+ videoDate + '</small>' +
+    '<p>' + description + '</p>' +
+    '</div>' +
+    '</div>';
+    return output;
+
+  }
+
+  //Build the Buttons
+  function getButtons(prevPageToken,nextPageToken,pageInfo) {
+
+    $('#btn-cnt').html('');
+    var btnoutput;
+    var q = $('#query').val();
+    if(!prevPageToken) {
+      btnoutput = '<div class="button-container">' +
+      '<span class="total-results"><label>Total Results :</label>' + pageInfo.totalResults + '</span>' +
+      '<button id="next-button" class="btn animated-button thar-three" data-token="' + 	nextPageToken + '" data-query="' + q +'"' +
+      'onclick="nextPage();">Next Page</button><div class="clearfix"></div></div>';
+      console.log(nextPageToken);
+    } else {
+      console.log(nextPageToken);
+      btnoutput = '<div class="button-container">' +
+      '<span class="total-results"><label>Total Results :</label>' + pageInfo.totalResults + '</span>' +
+      '<button id="next-button" class="btn  animated-button thar-three" data-token="' + 	nextPageToken + '" data-query="' + q +'"' +
+      'onclick="nextPage();">Next Page</button>' +
+      '<button id="prev-button" class="btn  animated-button thar-four" data-token="' + 	prevPageToken + '" data-query="' + q +'"' +
+      'onclick="prevPage();">Previous Page</button>' +
+      '<div class="clearfix"></div></div>';
+    }
+    return btnoutput;
+  }
+
+  function nextPage() {
+
+    var token = $('#next-button').data('token');
+    var q = $('#next-button').data('query');
+    //Clear any previous results
+    $('#results').html('');
+    $('#btn-cnt').html('');
+
+    //Get form input
+    q = $('#query').val();
+
+    //Run GET Request 	on API
+    $.get(
+      "https://www.googleapis.com/youtube/v3/search",{
+        part: 'snippet, id',
+        q: q,
+        pageToken: token,
+        type: 'video',
+        key: 'AIzaSyAShx8QLS_bc-cvTWKPfKdNLq6P79mDifc'},
+        function(data) {
+          var nextPageToken = data.nextPageToken;
+          var prevPageToken = data.prevPageToken;
+          var pageInfo = data.pageInfo;
+          //Log data
+          console.log(data);
+
+          $.each(data.items, function(i, item) {
+            //Get output
+            var output = getOutput(item);
+
+            //Display results
+            $('#results').append(output);
+          });
+
+          var buttons = getButtons(prevPageToken,nextPageToken,pageInfo);
+
+          //Display buttons
+          $('#results').prepend(buttons);
+          $('#btn-cnt').append(buttons);
+        }
+      );
+
+    }
+
+    function prevPage() {
+
+      var token = $('#prev-button').data('token');
+      var q = $('#prev-button').data('query');
+      //Clear any previous results
+      $('#results').html('');
+      $('#btn-cnt').html('');
+
+      //Get form input
+      q = $('#query').val();
+
+      //Run GET Request 	on API
+      $.get(
+        "https://www.googleapis.com/youtube/v3/search",{
+          part: 'snippet, id',
+          q: q,
+          pageToken: token,
+          type: 'video',
+          key: 'AIzaSyAShx8QLS_bc-cvTWKPfKdNLq6P79mDifc'},
+          function(data) {
+            var nextPageToken = data.nextPageToken;
+            var prevPageToken = data.prevPageToken;
+            var pageInfo = data.pageInfo;
+            //Log data
+            console.log(data);
+
+            $.each(data.items, function(i, item) {
+              //Get output
+              var output = getOutput(item);
+
+              //Display results
+              $('#results').append(output);
+            });
+
+            var buttons = getButtons(prevPageToken,nextPageToken,pageInfo);
+
+            //Display buttons
+            $('#results').prepend(buttons);
+            $('#btn-cnt').append(buttons);
+          }
+        );
+
+      }
+    </script>
