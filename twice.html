@@ -1,0 +1,368 @@
+
+
+
+<html>
+<head>
+  <title>Tyuzu</title>
+  <meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='tyuzu,tzuyu'>
+  <meta name='description' content='Have fun ...!'>
+  <meta name='copyright' content='Tyuzu Inc'>
+  <meta name='language' content='EN'>
+
+
+  <style>
+
+  input::placeholder {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .imgmic {
+    padding: 3px;
+    display: flex;
+  }
+  .row {
+    padding: 2px 2px 4px 2px;
+    display: flex;
+  }
+  .logopin {
+    fill: #00c73c;
+    width: 3em;
+    margin: 3px 5px;
+    -webkit-transform: translate(0px, 2px);
+    transform: translate(0px, 2px);
+    transition: .2s ease;
+  }
+  .threedot {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .srchicon {
+    fill:#ffffff;
+    width: 1.3em;
+    height: 1.3em;
+    stroke:#ffffff;
+  }
+
+  .form_container { display: flex;}
+  .total-results {display:inline-block; }
+  @media(max-width:360px) {
+    .total-results { display:block; }
+  }
+  .form-inline {
+    padding: 5px;
+    width: 100%;
+  }
+  button {
+    background-color: #00c73c;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #32cd32;
+  }
+  button:focus {
+    background: #002c73;
+  }
+  .search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border: 4px;
+    outline: none;
+    background: rgba(218, 218, 218, 0.3);
+    height: 48px;
+    padding: 12px;
+    color: #000;
+    font-size: 1.1em;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+
+  .navigation {
+    width: 100%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-family: "Verdana", sans-serif;
+    z-index: 10000;
+    background: #fff;
+    border-bottom: 1px solid #f4f4f4;
+  }
+
+  .navigation__inner {
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    border-left: 0;
+    border-right: 0;
+    height: 34px;
+    background: #fff;
+  }
+
+  .toggle:checked ~ .navigation__inner {
+    height: auto;
+  }
+
+  .navigation__link {
+    display: block;
+    padding: 8px 20px 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #777777;
+    cursor: pointer;
+  }
+
+  .navigation__link:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+  }
+
+  .navigation__logo {
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .navigation__logo .navigation__link {
+    font-weight: bold;
+  }
+
+  .navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 0;
+    border-right: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 400px) {
+    .navigation__item {
+      flex-basis: 100%;
+    }
+  }
+
+  .navigation__toggle {
+    flex-shrink: 0;
+  }
+
+  .navigation__toggle .navigation__link {
+    position: relative;
+    padding-right: 50px;
+  }
+
+  .navigation__toggle .navigation__link:after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  .toggle:checked
+  ~ .navigation__inner
+  .navigation__toggle
+  .navigation__link:after {
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #777 transparent;
+  }
+
+  .toggle {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", "Helvetica", "Droid Sans", Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="row">
+    <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+      <div width="100%" class="form_container">
+        <div class="d3 float-right" style="width:100%;">
+          <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Search">
+        </div>
+        <button type="submit" id="search-btn" name="search-btn" value="">
+          <svg class="srchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+  <nav class="navigation">
+    <input class="toggle" type="checkbox" id="more" aria-hidden="true" tabindex="-1">
+    <div class="navigation__inner">
+      <div class="navigation__list">
+        <li class="navigation__item"><a class="navigation__link" href="/web">Web</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/news">Travel</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/images">Images</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/videos">Videos</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/qas">Q&amp;A</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/shop">Shopping</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/blog">Blog</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/maps">Maps</a></li>
+        <li class="navigation__item"><a class="navigation__link" href="/all">Other</a></li>
+      </div>
+      <div class="navigation__toggle">
+        <label class="navigation__link" for="more" aria-hidden="true">More</label>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+  picture {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #eee;
+    margin: .5rem .25rem;
+    transform: translateY(4rem);
+    transform-origin: top;
+    opacity: 0;
+    transition: .5s all cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  }
+  picture.loaded {
+    transform: none;
+    opacity: 1;
+  }
+  picture > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  pre {
+    width: 100%;
+    max-width: 29em;
+    margin: 1rem auto;
+    background: #a32b75;
+    color: #fff;
+    padding: .5rem 1rem;
+    overflow-x: auto;
+  }
+  code b {
+    font-weight: normal;
+    opacity: .5;
+  }
+  code i {
+    font-style: normal;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .5);
+  }
+  .content {
+    margin-bottom: 4rem;
+  }
+  p {
+    text-align: center;
+  }
+  .loader {
+    margin-bottom: 100vh;
+    text-align: center;
+  }
+  .grid {
+    margin: .25rem;
+  }
+  .gridItem {
+    width: 50%;
+  }
+  .m, .l { display: none; }
+  @media (min-width: 600px) {
+    .gridItem { width: 33.33%; }
+    .s { display: none; }
+    .m { display: inline; }
+  }
+  @media (min-width: 900px) {
+    .gridItem { width: 25%; }
+    .m { display: none; }
+    .l { display: inline; }
+  }
+  @media (min-width: 1200px) {
+    .gridItem { width: 20%; }
+    .m { display: none; }
+    .l { display: inline; }
+  }
+  </style>
+  <main>
+    <div class="grid"></div>
+    <div class="loader">Loading&hellip;</div>
+  </main>
+  <script>/** @version 0.2.2 */
+  function TinyMasonry(b){function h(a){var c=100/a+"%";for(d=[];a--;){var e=document.createElement("div");e.style.width=c;e.style["float"]="left";b.appendChild(e);d.push(e)}}function g(a){a=Math.min(42,Math.round(a.parentElement.clientWidth/a.clientWidth))||1;for(var f;f=b.firstElementChild;)f.parentNode.removeChild(f);b.style.overflow="hidden";h(a);c.items.forEach(function(a){a.style.display="block";a.style.width="auto";a.style.visibility="";for(var b=d[0],c=d.length;c--;)d[c].clientHeight<=b.clientHeight&&(b=d[c]);b.appendChild(a)});b.style.minHeight=""}var c=this,d=[];c.update=function(){if(c.items[0]){b.classList.add("tinyMasonryLoaded");d[0]&&(b.style.minHeight=b.clientHeight+"px");var a=c.items[0];a.style.width="";a.parentNode&&a.parentNode.parentNode===b?g(a):(b.appendChild(a),setTimeout(g.bind(0,a)))}};c.items=[].slice.call(b.children);c.update();window.addEventListener("resize",c.update)};</script>
+  <script>
+  var loader = document.querySelector(".loader")
+  var grid = document.querySelector(".grid")
+  var masonry = new TinyMasonry(grid)
+
+  var loading = false
+
+  function createPicture () {
+    var width = 400
+    var height = Math.round(Math.random() * 400 + 200)
+    var picture = document.createElement("picture")
+    picture.classList.add("gridItem")
+    picture.style.paddingBottom = height / width * 100 + "%"
+    var image = document.createElement("img")
+    image.src = "https://unsplash.it/" + width + "/" + height + "?random"
+    if (!image.complete) {
+      image.addEventListener("load", function (picture) {
+        picture.classList.add("loaded")
+      }.bind(null, picture))
+    } else {
+      picture.classList.add("loaded")
+    }
+    picture.appendChild(image)
+    return picture
+  }
+
+  function loadMore () {
+    var inViewport = loader.getBoundingClientRect().top < window.innerHeight
+    if (!loading && inViewport) {
+      loading = true
+      for (var i = 16; i--;) {
+        var picture = createPicture()
+        masonry.items.push(picture)
+      }
+      masonry.update()
+      loading = false
+    }
+  }
+  window.addEventListener("scroll", loadMore)
+  window.addEventListener("resize", loadMore)
+  loadMore()
+  </script>
+  </body>
+  </html>
