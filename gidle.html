@@ -1,0 +1,991 @@
+<html><head>
+  <title>Tyuzu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="tyuzu,tzuyu">
+  <meta name="description" content="Have fun ...!">
+  <meta name="copyright" content="Tyuzu Inc">
+  <meta name="language" content="EN">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Apeman">
+  <meta name="designer" content="Apeman">
+  <meta name="owner" content="Apeman">
+  <meta name="url" content="http://www.tyuzu.com">
+  <meta name="identifier-URL" content="http://www.tyuzu.com">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <style>
+  @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+  @import url("https://fonts.googleapis.com/css?family=Montserrat");
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id="gradient5" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="25%" stop-color="#2196f3"></stop>
+            <stop offset="75%" stop-color="#22bbdd"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gradient5)" d="M0.00,12.00 C0.00,17.12 3.21,21.50 7.73,23.22 C7.62,22.28 7.50,20.74 7.75,19.65 C7.97,18.72 9.16,13.71 9.16,13.71 C9.16,13.71 8.80,13.00 8.80,11.94 C8.80,10.28 9.76,9.04 10.96,9.04 C11.98,9.04 12.47,9.80 12.47,10.72 C12.47,11.75 11.82,13.28 11.48,14.70 C11.20,15.89 12.08,16.86 13.25,16.86 C15.37,16.86 17.01,14.62 17.01,11.39 C17.01,8.53 14.95,6.53 12.02,6.53 C8.62,6.53 6.62,9.08 6.62,11.71 C6.62,12.74 7.02,13.84 7.51,14.44 C7.61,14.56 7.62,14.66 7.59,14.78 C7.50,15.16 7.30,15.97 7.26,16.14 C7.21,16.35 7.09,16.40 6.86,16.30 C5.37,15.60 4.44,13.42 4.44,11.67 C4.44,7.90 7.18,4.44 12.33,4.44 C16.48,4.44 19.70,7.39 19.70,11.34 C19.70,15.46 17.10,18.77 13.50,18.77 C12.29,18.77 11.15,18.14 10.76,17.40 C10.76,17.40 10.16,19.68 10.02,20.24 C9.73,21.32 8.95,22.69 8.47,23.47 C9.58,23.82 10.77,24.00 12.00,24.00 C18.63,24.00 24.00,18.63 24.00,12.00 C24.00,5.37 18.63,0.00 12.00,0.00 C5.37,0.00 0.00,5.37 0.00,12.00" data-reactid="33"></path>
+      </svg>
+
+    </div>
+    <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+      <div width="100%" class="form_container">
+        <div class="d3 float-right" style="width:100%;">
+          <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Web 'em up">
+        </div>
+        <button class="" type="submit" id="search-btn" name="search-btn" value="">
+          <svg class="srchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div>
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="25%" stop-color="#FFC107"></stop>
+            <stop offset="75%" stop-color="#FF9800"></stop>
+          </linearGradient>
+        </defs>
+        <circle fill="url(#gradient1)" cx="12" cy="12" r="3.2"></circle>
+        <path fill="url(#gradient1)" d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path>
+      </svg>
+
+    </div>
+    <div>
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <defs>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="25%" stop-color="#C338FF"></stop>
+            <stop offset="75%" stop-color="#EA68FF"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gradient2)" d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"></path>
+      </svg>
+
+    </div>
+  </div>
+
+  <style>
+  .row {
+    padding: 2px 2px 6px 2px;
+    box-shadow: 0 1px 10px rgb(234, 234, 234);
+    position: relative;
+    display: flex;
+  }
+  .threedot {
+    width: 3em;
+    transition: .2s ease;
+  }
+  .srchicon {
+    fill:#ffffff;
+    stroke:#ffffff;
+    width: 2em;
+    height: 2em;
+  }
+
+  @media screen and (max-width: 640px) {
+    .threedot {
+      display: block;
+      margin: 3px 0.1em;
+      -webkit-transform: translate(0px, 3px);
+      transform: translate(0px, 3px);
+    }
+.col3mid {
+  order: 3;
+}
+.col3lt {
+  order: 1;
+}
+.col3rt {
+  order: 2;
+}
+    .flex-area {
+      flex: 3 1 auto;
+      -webkit-flex: 3 1 auto;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: column;
+      flex-flow: column;
+    }
+  }
+  @media screen and (max-width: 1199px) and (min-width: 641px){
+    .threedot {
+      display: block;
+      margin: 3px 1.4em;
+      -webkit-transform: translate(0px, 8px);
+      transform: translate(0px, 8px);
+    }
+.col3rt {
+  display: none;
+}
+.flex-area {
+      flex: 2 1 auto;
+      -webkit-flex: 2 1 auto;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row;
+      flex-flow: row;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .form-inline {
+      max-width: 50em;
+    }
+    .threedot {
+      display: block;
+      margin: 0px 0.5em;
+      -webkit-transform: translate(0px, 6px);
+      transform: translate(0px, 6px);
+    }
+    .flex-area {
+      flex: 3 1 auto;
+      -webkit-flex: 3 1 auto;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: row;
+      flex-flow: row;
+    }
+  }
+  .form_container { display: flex;}
+  .total-results {display:inline-block; }
+  .form-inline {
+    padding: 5px;
+    width: 100%;
+  }
+  button {
+    background-image: linear-gradient(to right, #4ee43e 0%, #1ee63a 25%, #43e431 50%, #27e642 75%, #4ee43e 100%);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #2196f3;
+  }
+  button:focus {
+    background: #002c73;
+  }
+  .search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border: 4px;
+    outline: none;
+    background: rgba(218, 218, 218, 0.4);
+    height: 48px;
+    padding: 12px;
+    color: #000;
+    font-size: 1.1em;
+  }
+
+  input::placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Helvetica",sans-serif;
+  }
+
+  .featured-article-line {
+    padding: 10px 18px;
+    flex: 2 1 100%;
+    -webkit-flex: 2 1 100%;
+    background: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'Helvetica',sans-serif;
+  }
+  </style>
+
+  <div class="flex-container">
+    <div class="flex-area">
+      <article class="col3lt">
+        <section class="poptags" style="padding: 2px 0px 10px 0px;box-shadow:none;">
+          <!--<article class="featured-article-line" style="box-shadow:none;background: #fff ;">
+          <span style="font-size:18px;">Weblinks</span>
+        </article>-->
+        <div id="notes">
+          <div class="note">
+            <div class="line">
+              <span class="green" style="
+    /* color: #0000ff; */
+">India is preparing a moon landing for 1st time in country's history</span>
+            </div>
+            <div class="line small mt">Breaking news, videos, photos and articles | allinews
+            </div>
+            <div class="line med mt">
+              <img height="16" width="16" title="" data-src="https://icons.duckduckgo.com/ip3/8tracks.com.ico" src="https://icons.duckduckgo.com/ip3/8tracks.com.ico">
+              <span>allinews.com</span></div>
+            </div>
+
+            <div class="note">
+              <div class="line">
+                <span class="green">India biggest importer of US oil refinery byproduct</span>
+              </div>
+              <div class="line small mt">U.S. oil refineries that are unable to sell a dirty fuel waste product at home are exporting vast quantities of it to India instead. Petroleum coke, leftover from refining ...
+              </div>
+              <div class="line med mt">
+                <img height="16" width="16" title="" data-src="https://icons.duckduckgo.com/ip3/8tracks.com.ico" src="https://icons.duckduckgo.com/ip3/8tracks.com.ico">
+                <span>youtube.com/topic/india</span>
+              </div>
+
+            </div>
+            <div class="note">
+              <div class="line">
+                <span class="green">India and Japan are joining forces to beat China in the Asian space race</span>
+              </div>
+              <div class="line small mt">India and Japan took their deepening natural partnership into outer space when ISRO and the Japan Aerospace Exploration Agency divulged that they ...
+              </div>
+              <div class="line med mt">
+                <img height="16" width="16" title="" data-src="https://icons.duckduckgo.com/ip3/8tracks.com.ico" src="https://icons.duckduckgo.com/ip3/8tracks.com.ico">
+                <span>qz.com</span>
+              </div>
+
+            </div>
+            <div class="note">
+              <div class="line">
+                <span class="green">India is upholding an open internet as the US moves to dismantle net neutrality </span>
+              </div>
+              <div class="line small mt">On Nov. 28, the Telecom Regulatory Authority of India (TRAI) released its recommendations on net neutrality that make it mandatory for telecom companies to treat the internet a basic ...
+              </div>
+              <div class="line med mt">
+                <img height="16" width="16" title="" data-src="https://icons.duckduckgo.com/ip3/8tracks.com.ico" src="https://icons.duckduckgo.com/ip3/8tracks.com.ico">
+                <span>yahoo.com/style/tagged/internet</span>
+              </div>
+
+            </div>
+            <div class="note">
+              <div class="line">
+                <span class="green">"Hope India Will Do More" To Stop N Korea Missile Programme: US</span>
+              </div>
+              <div class="line small mt">
+                North Korea fired of an intercontinental ballistic missile (ICBM) yesterday which Pyongyang's leader Kim Jong Un said gave his country the capability to hit anywhere in the US
+              </div>
+              <div class="line med mt">
+                <img height="16" width="16" title="" data-src="https://icons.duckduckgo.com/ip3/8tracks.com.ico" src="https://icons.duckduckgo.com/ip3/8tracks.com.ico">
+                <span>india.gov.in</span>
+              </div>
+
+            </div>
+            <div id="no-cards">
+              <div class="line">No cards</div>
+            </div>
+            <div class="more">
+              <span>More Websites &gt;&gt;</span>
+            </div>
+          </div>
+        </section>
+        <section class="poptags">
+                      <article class="featured-article-line" style="box-shadow:none;background: #fff; ">
+                        <span style="font-size:18px;">Videos</span>
+                      </article>
+
+          <ul class="video-items puzzle">
+          	<li class="main">
+          		<a href="/ch/loootta/v/5608933">
+          			<img alt=" " src="https://i.ytimg.com/vi/f3u9fEsjkQ4/maxresdefault.jpg">
+          			<span class="title">
+          				<span class="title-text text-ellipsis">
+          					This needs to be fixed
+          				</span>
+          				<span class="title-bg"></span>
+          			</span>
+          		</a>
+          	</li>
+          	<li>
+          		<a href="/ch/191919/v/5608875">
+          			<img alt="" src="https://i.pinimg.com/564x/60/bc/0e/60bc0edd785137ed6dadcdae8d818351.jpg">
+          			<span class="title">
+          				<span class="title-text text-ellipsis">
+          					First complementary video
+          				</span>
+          				<span class="title-bg"></span>
+          			</span>
+          		</a>
+          	</li>
+          	<li>
+          		<a href="/ch/191919/v/5608677">
+          			<img alt="" src="http://timgs.wecandeo.com/thumb/179/20140122/11/5922_2d02a_00002_640_360.jpg">
+          			<span class="title">
+          				<span class="title-text text-ellipsis">
+          					Second complementary video
+          				</span>
+          				<span class="title-bg"></span>
+          			</span>
+          		</a>
+          	</li>
+          	<li>
+          		<a href="/ch/191919/v/5608066">
+          			<img alt="" src="http://timgs.wecandeo.com/thumb/179/20140121/15/1911_20843_00001_640_360.jpg">
+          			<span class="title">
+          				<span class="title-text text-ellipsis">
+          					Third complementary video
+          				</span>
+          				<span class="title-bg"></span>
+          			</span>
+          		</a>
+          	</li>
+          	<li>
+          		<a href="/ch/sis95/v/5552034">
+          			<img alt="" src="http://timgs.wecandeo.com/thumb/179/20131115/16/0420_1964e_00001_640_360.jpg">
+          			<span class="title">
+          				<span class="title-text text-ellipsis">
+          					Fourth complementary video
+          				</span>
+          				<span class="title-bg"></span>
+          			</span>
+          		</a>
+          	</li>
+          </ul>
+          <div class="more">
+            <span>More Videos &gt;&gt;</span>
+          </div>
+        </section>
+      </article>
+      <article class="col3mid">
+        
+          <style>
+
+
+
+                  .wraperdaper{
+                    text-align: right;
+                  }
+
+                  .slidepanels {
+                    /* Prevent vertical gaps */
+                    line-height: 0;
+                    -webkit-column-count: 4;
+                    -webkit-column-gap:   8px;
+                    -moz-column-count:    4;
+                    -moz-column-gap:      8px;
+                    column-count:         4;
+                    column-gap:           8px;
+
+
+                  }
+                  .cycler{
+                    position: relative;
+                  }
+
+                  .cycler img:first-child{
+                    position: relative; z-index: 1;
+                  }
+
+                  .cycler img:not(:first-child){
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  }
+
+
+                  .cycler img.active{
+                    z-index: 3;
+                  }
+
+                  .slidepanels div img {
+                    /* Just in case there are inline attributes */
+                    width: 100% !important;
+                    height: auto !important;
+                    margin-top: 3.6%;
+                  }
+
+                  @media (max-width: 620px) {
+                    .slidepanels {
+                      -moz-column-count:    3;
+                      -webkit-column-count: 3;
+                      column-count:         3;
+                    }
+                    .navigation_type_horizontal {
+                      padding-left: 12%;
+                    }
+                  }
+                  @media (max-width: 480px) {
+                    .slidepanels {
+                      -moz-column-count:    2;
+                      -webkit-column-count: 2;
+                      column-count:         2;
+                    }
+                  }
+
+
+          </style>
+
+<section class="poptags" style="padding:0;">
+    <article class="featured-article-line" style="text-shadow:none;border-right:1px solid #eee; ">
+              <span style="font-size:18px;font-weight: bold;color:#b200ff">Images</span>
+            </article>
+<div class="slidepanels">
+          <div id="cycler4" class="cycler">
+          <img src="https://www.1800flowers.com/blog/wp-content/uploads/2017/06/dahlia-flowers-orange-purple.jpg">
+          </div>
+          <div id="cycler1" class="cycler">
+          <img src="https://cnet4.cbsistatic.com/img/AVSpk30o9vxRTG-eEgKHmUCbG3I=/830x467/2017/03/27/a4184fe4-5fa0-4a57-b0b2-3bb5601ef536/gsocho-ny-19-jg.jpg">
+          </div>
+          <div id="cycler" class="cycler">
+          <img src="https://viralsweep.com/blog/wp-content/uploads/2015/02/unsplash.jpg">
+          </div>
+          <div id="cycler1" class="cycler">
+          <img src="http://gadgetscanner.in/wp-content/uploads/2016/12/Meizu-Bezel-less-phone.jpg">
+          </div>
+          <div id="cycler1" class="cycler">
+          <img src="http://planetside.co.uk/wp-content/uploads/2016/09/Terragen-4-for-educational-use-M.jpg">
+          </div>
+          <div id="cycler2" class="cycler">
+          <img src="http://s3.amazonaws.com/armstrongeconomics-wp/2014/03/south-korea.jpg">
+          </div>
+          
+          <div id="cycler1" class="cycler">
+          <img src="https://i.pinimg.com/736x/27/6d/d5/276dd5b62fc9958b836a692570a8df8c--minimalist-wallpaper-cartoon-wallpaper.jpg">
+          </div>
+          </div><div class="more">
+              <span>More Images &gt;&gt;</span>
+            </div>
+</section>
+<section class="poptags" style="padding:0;">
+            <article class="featured-article-line" style="text-shadow:none;border-right:1px solid #eee; ">
+              <span style="font-size:18px;font-weight: bold;color:#b200ff">Related Searches</span>
+            </article>
+            <div class="descript">
+              <div class="raill">
+                <div class="ticket">
+                  <div class="details">
+                    <div class="top">
+                      <p class="title">Spiderman</p>
+                    </div>
+                    <div class="fiddle">
+                      <p class="description">India has the "intellectual capacity" and potential to be a model for the rest of the world in tackling...</p>
+                    </div>
+                    <div class="bottom">
+                      <p class="from">www.adidass.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ticket">
+                  <div class="details">
+                    <div class="top">
+                      <p class="title">Batman</p>
+                    </div>
+                    <div class="fiddle">
+                      <p class="description">India has the "intellectual capacity" and potential to be a model for the rest of the world in tackling...</p>
+                    </div>
+                    <div class="bottom">
+                      <p class="from">www.adidass.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="railr">
+                <div class="ticket">
+                  <div class="details">
+                    <div class="top">
+                      <p class="title">Ironman</p>
+                    </div>
+                    <div class="fiddle">
+                      <p class="description">India has the "intellectual capacity" and potential to be a model for the rest of the world in tackling...</p>
+                    </div>
+                    <div class="bottom">
+                      <p class="from">www.adidass.com</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ticket">
+                  <div class="details">
+                    <div class="top">
+                      <p class="title">Superman</p>
+                    </div>
+                    <div class="fiddle">
+                      <p class="description">India has the "intellectual capacity" and potential to be a model for the rest of the world in tackling...</p>
+                    </div>
+                    <div class="bottom">
+                      <p class="from">www.adidass.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="poptags">
+          <article class="featured-article-line" style="text-shadow:none;border-bottom:1px solid #eee; ">
+            <span style="font-size:18px;font-weight: bold;color:#ff9800">Related Keywords</span>
+          </article>
+          <div class="rels">
+            <span> first keyword</span><br>
+            <span> another one</span><br>
+            <span> maybe this</span><br>
+            <span> or could be this</span><br>
+            <span> is that okay</span><br>
+            <span> try this one</span><br>
+          </div>
+        </section>
+        <section class="poptags">
+          <article class="featured-article-line" style="text-shadow:none;border-bottom:1px solid #eee; ">
+            <span style="font-size:18px;font-weight: bold;color:#384fff">Popular Tags</span>
+          </article>
+          <div class="tags">
+            <span>#tag1 </span>
+            <span>#tag2 </span>
+            <span>#tag3 </span>
+            <span>#tag4 </span>
+            <span>#tag5 </span>
+            <span>#tag6 </span>
+            <span>#tag7 </span>
+            <span>#tag8 </span>
+            <span>#tag9 </span>
+            <span>#tag10 </span>
+          </div>
+        </section>
+
+      </article>
+      <article class="col3rt">
+        <section style="margin:8px 0">
+                <section class="featured-post-footr">
+                  <div class="card">
+                    <div class="details">
+                      <div class="top">
+                        <p class="title">Spiderman Shoes</p>
+                      </div>
+                      <div class="middle">
+                        <div class="price">₹750</div>
+                        <div class="heart"></div>
+                        <p class="description">This looks really good! I want to try it out</p>
+                      </div>
+                      <div class="bottom">
+                        <p class="from">www.adidass.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+      </article>
+    </div>
+  </div>
+
+<style>
+@charset "utf-8";
+/* 윤태건 | tg0825@gmail.com | @tg0825 */
+
+/* 사용범위정의 :reset과 .content에 들어가는 것을 제외한 고정된 레이아웃 */
+#gradient
+{
+width: 100%;
+height: 800px;
+padding: 0px;
+margin: 0px;
+}
+/* reset */
+*{margin:0; padding:0;}
+html,body{height:100%;}
+body,p,td,label,textarea,a,li,input,button,textarea,select{font-family: '나눔고딕','NanumGothic','맑은 고딕', arial, sans-serif;color:#444;-webkit-text-size-adjust:none;}
+table{border-collapse:collapse;border-spacing:0;}
+iframe,fieldset,img{border:0;}
+img{-ms-interpolation-mode:bicubic;}
+table caption,legend{display:none;}
+button{overflow:visible;}
+button::-moz-focus-inner{border:0;padding:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+a,input,textarea,select,button{outline:0;}
+menu,ul,ol{list-style:none;}
+a{text-decoration:none;color:#10b3e2;}
+a:hover{text-decoration:underline;}
+label,button,input[type="checkbox"],input[type="radio"]{cursor:pointer;}
+input[type="text"],input[type="password"]{cursor:text;}
+label{display:inline-block;*display:inline;*zoom:1;}
+input[type=checkbox]{width:16px;height:14px;}
+.small-show{display:none;}
+.wide-show{display:block;}
+.wrap a:focus{outline:1px dotted invert;outline-offset:-1px;}
+
+
+/* video-list style */
+/* video-list common */
+.video-items .video-item input[type="checkbox"]{float:left;margin:40px 10px 0 0;}
+.video-items .video-item .video-thumbnail{position:relative;}
+.video-items .video-item .video-thumbnail img{max-width:100%;height:100%;}
+.video-items .video-item .video-thumbnail .video-state{z-index:10;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;font-size:0;overflow:hidden;}
+.video-items .video-item .video-thumbnail .video-state .state-message{vertical-align:middle;display:inline-block;text-align:center;font-size:14px;font-weight:bold;color:#fff;}
+.video-items .video-item .video-thumbnail .video-state .vertical-fix{height:100%;vertical-align:middle;display:inline-block;width:0;}
+.video-items .video-item .video-thumbnail .video-state .thumbnail-mask{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;background:#000;}
+.video-items .video-item .video-thumbnail .video-state .thumbnail-mask.opacity{opacity:0.70;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
+.video-items .video-item .video-thumbnail .play-time{z-index:20;position:absolute;bottom:5px;right:5px;color:#fff;background:#000;font-size:11px;padding:2px 4px;-moz-opacity: 0.80;opacity: 0.80;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
+.video-items .video-item .video-thumbnail .icon-hd,
+.video-items .video-item .video-thumbnail .icon-hd-s{z-index:20;position:absolute;top:0;right:0;}
+.video-items .video-item .video-info .video-url a{color:#10b8e9;}
+.video-items .video-item .video-info .video-url a:hover{text-decoration:underline;}
+.video-items .video-title a{font-weight:bold;color:#333;}
+.video-items .video-title a:hover{text-decoration:underline;color:#10b1e0;}
+.video-items.play-count .play-count{display:none;}
+.video-items.date .date{display:none;}
+.video-items.public .public{display:none;}
+.video-items.playlist .playlist{display:none;}
+.video-items.video-url .video-url{display:none;}
+/* puzzle */
+.video-items.puzzle{overflow:hidden;margin:.5% 0 0 0;}
+.video-items.puzzle .main{margin:.5% 0 0 0;width:50%;}
+.video-items.puzzle .main a{height:0;padding-bottom:56.25%;}
+.video-items.puzzle .main a .title-text{padding:10px;font-size:16px;font-weight:bold;}
+.video-items.puzzle li{float:left;position:relative;margin:.5% 0 0 .5%;width:24.5%;overflow:hidden;}
+.video-items.puzzle li a{border:1px solid #ddd;display:block;position:relative;height:0;padding-bottom:56.25%;margin-bottom:-2px;margin-left:-2px;background:#000;text-align:center;}
+.video-items.puzzle li a .title{position:absolute;bottom:0;left:0;width:100%;text-align:center;}
+.video-items.puzzle li a .title-text{color:#fff;position:relative;z-index:100;display:block;padding:3px;}
+.video-items.puzzle li a .title-bg{position:absolute;bottom:0;left:0;z-index:1;width:100%;height:100%;background:#000;
+opacity: 0.4;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+}
+.video-items.puzzle li a img{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+
+/* small */
+@media only screen and (max-width:640px){
+.video-items.puzzle{border:1px solid #ddd;border-width:1px 1px 0 0;}
+.video-items.puzzle .main{width:100%;margin:0;}
+.video-items.puzzle .main a{margin:0;}
+.video-items.puzzle li{margin:0;width:50%;}
+.video-items.puzzle li a{margin:0;border:1px solid #ddd;border-width:0 0 1px 1px;}
+.video-item .video-info>span{display:block;}
+}
+</style>
+
+  <style>
+
+  .poptags {
+    background: #fff;
+    margin: 8px 0 8px 0;
+    box-shadow: 0 1px 10px rgb(234, 234, 234);
+  }
+
+  .more {
+    background: #fff;
+    text-align: right;
+    padding: 10px
+  }
+  .more span {
+    padding: 0px;
+    color:blue;
+  }
+
+
+  .flex-container {
+    position: relative;
+  }
+
+  .col3lt {
+    flex: 2 1 50%;
+    -webkit-flex: 2 1 50%;
+    padding: 0 8px;
+  }
+
+  .col3mid {
+    flex: 2 1 35%;
+    -webkit-flex: 2 1 35%;
+    padding: 0 8px;
+  }
+
+  .col3rt {
+    flex: 2 1 15%;
+    -webkit-flex: 2 1 15%;
+    padding: 0 8px;
+  }
+  .featured-post-footr {
+    margin: 0 0 8px 0;
+  }
+
+a {
+  text-decoration: none;
+}
+  #notes {
+    overflow: hidden;
+    max-width: 680px;
+    /*  background: #0fa;2cb503;#03bf14*/
+  }
+  .note {
+    min-height: 45px;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: transform .5s;
+    padding: 10px;
+    background: #fff;
+    /*border-bottom: 1px solid #e4e4e4;*/
+    box-shadow: 0px 0px 4px 0px #e4e4e4, 0px 0px 2px -1px #e4e4e4;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.06) rgba(0,0,0,0.06) rgba(0,0,0,0.11) #2cb503;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.04);
+    border-width: 1px 1px 1px 4px;
+    border-radius: 2px;
+  }
+  #notes > div:nth-child(n+1) {
+    margin-bottom: 6px;
+  }
+  #notes > div:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+  .note span {
+    vertical-align: top;
+  }
+  .note span.green {
+    color: #0064ff;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 24px;
+    font-size: 18px;
+  }
+  .note span.green:hover {
+    color: #111111;
+  }
+  .note span.blue {
+    color: #3803b5;
+    font-size: 15px;
+    /*font-weight: 600;*/
+    font-style: normal;
+    line-height: 17px;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .note span.red,
+  i.red {
+    color: #c77300;
+  }
+  .note span.small {
+    font-size: 13px;
+  }
+  .note span.offset {
+    margin-left: 25px;
+  }
+  .note .line.med {
+    color: #777777;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .note .line.small {
+    color: #000000;
+    font-size: 14px;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .note .line.large {
+    margin-top: 2px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .note .mt {
+    margin-top: 4px;
+  }
+  .double {
+    transition: transform .5s;
+  }
+  .double .note {
+    width: 42.3%;
+    float: left;
+    margin-bottom: 0;
+  }
+  .double .note:first-child {
+    margin-right: 6px;
+  }
+  .group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .tr {
+    transform: translate(350px, 0);
+  }
+  #no-cards {
+    display: none;
+    margin-top: 5px;
+  }
+  #no-cards .line {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    text-shadow: 0 2px 1px hsla(0, 0%, 40%, .1);
+  }
+  .note ul li a { font-size: 13px;padding: 2px;font-color: #0099ff;}
+
+  .ticket {
+    width: 50%;
+    padding: 10px;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 1px 1px 0px 0px;
+    border-radius: 2px;
+  }
+  .descript {
+    display: grid;
+    justify-content: space-between;
+  }
+  .raill {
+    display: flex;border-right: none;
+  }
+  .railr {
+    display: flex;border-right: none;
+  }
+  .fiddle {
+    padding-top: 0px;
+  }
+  .fiddle div,
+  .fiddle span {
+    display: inline-block;
+    color: #03a9f4;;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .fiddle p {
+    margin-bottom: 6px;
+    margin-top: 6px;
+    font-family: "Segoe UI",sans-serif;
+  }
+
+
+  .card {
+    background-color: #fff;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    font-family: "Segoe UI", arial, sans-serif;
+      box-shadow: 0 0px 2px rgba(0, 0, 0, .12);
+  }
+
+  .card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+  }
+
+  .image img{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    object-fit: contain;
+    border: 0px solid transparent;
+  }
+  .details {
+    width: 100%;
+  }
+  .top,
+  .middle,
+  .fiddle,
+  .bottom {
+    position: relative;
+    margin: 0;
+    padding: 0px 7px;
+  }
+  .top .pinner {
+    margin: 0 0 5px 0;
+  }
+  .top .pinner img {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    display: inline;
+  }
+  .top .pinner p {
+    color: #ccc;
+    position: relative;
+    top: 0px;
+    display: inline;
+  }
+  .top .title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .middle {
+    padding-top: 0px;
+  }
+  .middle div,
+  .middle span {
+    display: inline-block;
+    color: #03a9f4;;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .middle p {
+    margin-bottom: 6px;
+    margin-top: 6px;
+    font-family: "Montserrat",sans-serif;
+  }
+  .middle .heart {
+    margin: 0 5px;
+    position: relative;
+    height: 12px;
+    width: 12px;
+    background-color: #ff5245;
+    transform: rotate(45deg);
+    float: right;
+  }
+  .middle .heart:before {
+    content: "";
+    border: solid 6px #ff5245;
+    border-radius: 100%;
+    position: absolute;
+    top: -7px;
+  }
+  .middle .heart:after {
+    content: "";
+    border: solid 6px #ff5245;
+    border-radius: 100%;
+    position: absolute;
+    top: 0px;
+    left: -7px;
+  }
+  .bottom .from {
+    color: #de6565;
+    font-family: "Segoe UI";
+  }
+  p {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+  }
+
+  .tags {
+    padding: 4px;
+    margin: 8px;
+  }
+  .tags span {
+    background: #ffffff;
+    padding: 8px 12px;
+    color: #555;
+    margin: 6px;
+    box-shadow: 0px 0px 1px #d4d4d4;
+    font-size: 14px;
+    line-height: 50px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .rels {
+    padding: 4px;
+    margin: 8px;
+  }
+  .rels span {
+    text-decoration: none;
+    padding: 4px;
+    color: #2173f3;
+    margin: 2px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .relspan {
+    font-weight: bold;
+    color:#80db70;
+    /*box-shadow: 8px 8px 24px 0px rgba(132, 132, 132, 0.09);
+    box-shadow: 0px 1px 10px 1px rgba(35, 17, 202, 0.1);*/
+  }
+
+
+  </style>
+</body></html>
