@@ -1,0 +1,819 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <title>Tyube</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="tyuzu,tzuyu">
+  <meta name="description" content="Have fun ...!">
+  <meta name="copyright" content="Tyuzu Inc">
+  <meta name="language" content="EN">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Apeman">
+  <meta name="designer" content="Apeman">
+  <meta name="owner" content="Apeman">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+  <script type="text/javascript">
+  ymaps.ready(init);
+  var myMap,
+  myPlacemark;
+
+  function init(){
+    myMap = new ymaps.Map("map", {
+      center: [55.76, 37.64],
+      zoom: 7
+    });
+
+    myPlacemark = new ymaps.Placemark([55.76, 37.64], { hintContent: 'Moscow!', balloonContent: 'Capital of Russia'
+  });
+
+  myMap.geoObjects.add(myPlacemark);
+}
+</script>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background: #ffffff url('') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+</style>
+</head>
+<body>
+  <div class="row">
+    <div style="display: flex;  ">
+      <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform:rotate(270deg);margin-top:8px;">
+        <defs>
+          <linearGradient id="gradient5" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2188ff"></stop>
+            <stop offset="100%" stop-color="#22ff44"></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gradient5)" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path>
+      </svg>
+      <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+        <div width="100%" class="form_container">
+          <div class="d3 float-right" style="width:100%;">
+            <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Search">
+          </div>
+          <button class="" type="submit" id="search-btn" name="search-btn" value="">
+            <svg class="srchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path>
+            </svg>
+          </button>
+        </div>
+      </form></div>
+
+      <div class="usernav">
+        <svg class="threedot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <defs>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="25%" stop-color="#C338FF"></stop>
+              <stop offset="75%" stop-color="#EA68FF"></stop>
+            </linearGradient>
+          </defs>
+          <path fill="url(#gradient2)" d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+        </svg>
+      </div>
+    </div>
+    <style>
+    .usernav {
+      display: flex;
+    }
+    .row {
+      position: relative;
+      display: flex;
+      background: #ffffff;
+      justify-content: space-between;
+    }
+    .threedot {
+      width: 3em;
+      height: 3em;
+      transition: .2s ease;
+    }
+    .srchicon {
+      fill:#ffffff;
+      stroke:#ffffff;
+      width: 2em;
+      height: 2em;
+    }
+    @media screen and (max-width: 640px) {
+      .threedot {
+        display: block;
+      }
+      .col3mid {
+        order: 1;
+      }
+      .col3lt {
+        order: 2;
+      }
+      .col3rt {
+        order: 3;
+      }
+      .flex-area {
+        flex: 3 1 auto;
+        -webkit-flex: 3 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+      }
+    }
+    @media screen and (max-width: 1199px) and (min-width: 641px){
+      .threedot {
+        display: block;
+      }
+      .col3rt,.col3lt,.col3mid {
+        padding: 0 8px;
+      }
+      .flex-area {
+        flex: 2 1 auto;
+        -webkit-flex: 2 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row;
+        flex-flow: row;
+      }
+    }
+
+    .threedot {
+      width: 2.8em;
+      height: 2.8em;
+      transition: .2s ease;
+    }
+    .srchicon {
+      fill:#ffffff;
+      stroke:#ffffff;
+      width: 2em;
+      height: 2em;
+    }
+    @media screen and (max-width: 600px) {
+      .threedot {
+        display: block;
+        -webkit-transform: translate(0px, 5px);
+        transform: translate(0px, 5px);
+      }
+      .usernav {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 1199px) and (min-width: 601px){
+      .threedot {
+        display: block;
+        margin: 3px 1.4em;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      .threedot {
+        display: block;
+        -webkit-transform: translate(0px, 6px);
+        transform: translate(0px, 6px);
+        margin: 0px 2em;
+      }
+      .form-inline {
+        min-width: 45em;
+        margin-left: 10px;
+      }
+      .flex-area {
+        padding: 0 3em;
+      }
+      .col3lt,.col3rt {
+        padding: 0 1em;
+      }
+      .threedot {
+        display: block;
+        margin: 0px 0.5em;
+        -webkit-transform: translate(0px, 6px);
+        transform: translate(0px, 6px);
+      }
+    }
+
+    /*
+
+    @media screen and (max-width: 640px) {
+    .threedot {
+    display: block;
+    margin: 3px 0.5em;
+    -webkit-transform: translate(0px, 3px);
+    transform: translate(0px, 3px);
+  }
+  .col3mid {
+  order: 1;
+}
+.col3rt {
+order: 2;
+}
+.flex-area {
+flex: 3 1 auto;
+-webkit-flex: 3 1 auto;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-flow: column;
+flex-flow: column;
+}
+}
+@media screen and (max-width: 1199px) and (min-width: 641px){
+.threedot {
+display: block;
+margin: 3px 1.4em;
+-webkit-transform: translate(0px, 8px);
+transform: translate(0px, 8px);
+}
+.col3rt {
+display: none;
+}
+.col3mid {
+padding: 0 8px;
+}
+.flex-area {
+flex: 2 1 auto;
+-webkit-flex: 2 1 auto;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-flow: row;
+flex-flow: row;
+}
+}
+@media screen and (min-width: 1200px) {
+.form-inline {
+max-width: 40em;
+}
+.col3mid,.col3rt {
+padding: 0 20px;
+}
+.threedot {
+display: block;
+margin: 0px 0.5em;
+-webkit-transform: translate(0px, 6px);
+transform: translate(0px, 6px);
+}
+.flex-area {
+flex: 3 1 auto;
+-webkit-flex: 3 1 auto;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-flow: row;
+flex-flow: row;
+padding: 0 2em;
+}
+}
+*/
+.form_container { display: flex;}
+.total-results {display:inline-block; }
+@media(max-width:360px) {
+  .total-results { display:block; }
+}
+
+.form-inline {
+  padding: 5px;
+  width: 100%;
+}
+button {
+  /*background: linear-gradient(to left, #FF4E50 , #F9D423);*/
+  border: none;
+  background: #2196f3;
+  outline: none;
+  color: white;
+  padding: 0 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button:hover {
+  background: linear-gradient(to left, #00dc02 , #83ee17);
+}
+button:focus {
+  background: linear-gradient(to left, #00dc02 , #83ee17);
+}
+.search-field {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 4px;
+  outline: none;
+  background: rgba(218, 218, 218, 0.4);
+  height: 48px;
+  padding: 12px;
+  color: #000;
+  font-size: 1.1em;
+}
+
+input::placeholder {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+</style>
+
+<div class="flex-container">
+  <div class="flex-area">
+    <article class="col3rt">
+      <section class="topsec">
+        <article class="featured-article-line" style="box-shadow:none;background: #fff;">
+          <span style="font-size:18px;">Images</span>
+        </article>
+        <div class="wraperdaper">
+          <div class="slidepanels">
+            <div id="cycler1" class="cycler">
+              <img src="https://placeimg.com/640/480/tech">
+            </div>
+            <div id="cycler" class="cycler">
+              <img src="https://www.bensound.com/bensound-img/november.jpg">
+            </div>
+            <div id="cycler" class="cycler">
+              <img src="http://www.jane-levy.info/wp-content/uploads/free-stock-images-gzsihai-royalty-free-image.jpg">
+            </div><div id="cycler" class="cycler">
+              <img src="https://www.bensound.com/bensound-img/ofeliasdream.jpg">
+            </div><div id="cycler" class="cycler">
+              <img src="https://blog.bufferapp.com/wp-content/uploads/2014/05/6110974997_8b0dfa13a0_b.jpg">
+            </div><div id="cycler" class="cycler">
+              <img src="http://skyrocketradio.com/wp-content/uploads/2016/05/stocksnap-free-stock-photos1.jpg">
+            </div><div id="cycler" class="cycler">
+              <img src="https://i.pinimg.com/originals/f0/9e/e2/f09ee2edca067b4b133dc038c99b3b4b.jpg">
+            </div><div id="cycler" class="cycler">
+              <img src="https://cdn8.dissolve.com/p/17A231_424/17A231_424_0004_600.jpg">
+            </div>
+          </div>
+          <div class="more">
+            <span>More Images &gt;&gt;</span>
+          </div>
+        </div>
+      </section>
+      <section class="midsec">
+        <article class="featured-article-line" style="box-shadow:none;background: #fff;">
+          <span style="font-size:18px;">Videos</span>
+        </article>
+        <div class="videocon">
+          <ul class="video-items puzzle">
+            <li class="main">
+              <a href="/ch/loootta/v/5608933">
+                <img alt=" " src="https://i.ytimg.com/vi/_umTqgzcTTU/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAST9L7-hNw6C2f97Of9QDnvZvPvg">
+                <span class="title">
+                  <span class="title-text text-ellipsis">
+                    This is the main video
+                  </span>
+                  <span class="title-bg"></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/ch/191919/v/5608875">
+                <img alt="" src="https://i.ytimg.com/vi/cxcxskPKtiI/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCb4vSLEZVWgFilsVrwvwqG9olSvw">
+                <span class="title">
+                  <span class="title-text text-ellipsis">
+                    First video title
+                  </span>
+                  <span class="title-bg"></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/ch/191919/v/5608677">
+                <img alt="" src="https://i.ytimg.com/vi/T87wXAJe-_M/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCuzJymRuqk-b-avlW1Fk6kn6JNHA">
+                <span class="title">
+                  <span class="title-text text-ellipsis">
+                    Second video title
+                  </span>
+                  <span class="title-bg"></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/ch/191919/v/5608066">
+                <img alt="" src="https://i.ytimg.com/vi/3gt7E7I-RxQ/hqdefault.jpg?sqp=-oaymwEYCNIBEHZIVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCrkqbpNQcjJGb4dUiMpwq1rVnR1w">
+                <span class="title">
+                  <span class="title-text text-ellipsis">
+                    Third video title
+                  </span>
+                  <span class="title-bg"></span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/ch/sis95/v/5552034">
+                <img alt="" src="http://timgs.wecandeo.com/thumb/179/20131115/16/0420_1964e_00001_640_360.jpg">
+                <span class="title">
+                  <span class="title-text text-ellipsis">
+                    Fourth video title
+                  </span>
+                  <span class="title-bg"></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="more">
+            <span>More Videos &gt;&gt;</span>
+          </div>
+        </div>
+      </section>
+      <section class="botsec">
+        <article class="featured-article-line" style="box-shadow:none;background: #fff;">
+          <span style="font-size:18px;">Map</span>
+        </article>
+        <div id="map" style="width:100%; height: 300px;padding:1%;"></div>
+      </section>
+    </article>
+    <article class="col3lt">
+      <article class="featured-article-line" style="box-shadow:none;background: #fff;">
+        <span style="font-size:18px;">Weblinks</span>
+      </article>
+      <div id="notes">
+        <div class="note">
+          <div class="line"><span class="green">Blockchain - Wikipedia </span></div>
+          <div class="line med mt">
+            <span style="color:#2cb503;">https://en.wikipedia.org/wiki/Blockchain_(database)</span></div>
+            <div class="line small mt">A blockchain, originally block chain, is a continuously growing list of records, called blocks, which are linked and secured using cryptography. Each block typically contains a cryptographic hash of the previous block, a timestamp and transaction data.</div>
+
+          </div>
+          <div class="note">
+            <div class="line"><span class="green">Blockchain</span></div>
+            <div class="line med mt">
+              <span style="color:#2cb503;">https://www.blockchain.com</span></div>
+              <div class="line small mt">Blockchain is the world's leading software platform for digital assets. Offering the largest production block chain platform in the world, we are using new technology to build a radically better financial system.</div>
+
+            </div>
+            <div class="note">
+              <div class="line"><span class="green">What is Blockchain? | Fortune</span></div>
+              <div class="line med mt">
+                <span style="color:#2cb503;">fortune.com/2016/05/23/blockchain-definition/</span></div>
+                <div class="line small mt">Though it sounds like a series of defensive maneuvers ripped out of an NFL playbook, the blockchain is actually a way to structure data, and the foundation of cryptocurrencies like Bitcoin.</div>
+
+              </div>
+              <div class="note">
+                <div class="line"><span class="green">What is blockchain? - IBM Blockchain</span></div>
+                <div class="line med mt">
+                  <span style="color:#2cb503;">https://www.ibm.com/blockchain/what-is-blockchain.html</span></div>
+                  <div class="line small mt">IBM Blockchain and the revolutionary shared ledger technology can help your enterprise business solve complex problems now and in the near future.</div>
+
+                </div>
+                <div class="note">
+                  <div class="line"><span class="green">Blockchain, explained</span></div>
+                  <div class="line med mt">
+                    <span style="color:#2cb503;">http://mitsloan.mit.edu/newsroom/articles/blockchain-explained/</span></div>
+                    <div class="line small mt">Blockchain is a term widely used to represent an entire new suite of technologies. There is substantial confusion around its definition because the technology is early-stage, and can be implemented in many ways depending on the objective.</div>
+
+                  </div>
+                  <div id="no-cards">
+                    <div class="line">No cards</div>
+                  </div>
+
+                  <div class="more">
+                    <span>More Weblinks &gt;&gt;</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <style>
+          @charset "utf-8";
+          *{margin:0; padding:0;}
+          html,body{height:100%;}
+          body,p,td,label,textarea,a,li,input,button,textarea,select{font-family: '나눔고딕','NanumGothic','맑은 고딕', arial, sans-serif;color:#444;-webkit-text-size-adjust:none;}
+          table{border-collapse:collapse;border-spacing:0;}
+          iframe,fieldset,img{border:0;}
+          img{-ms-interpolation-mode:bicubic;}
+          table caption,legend{display:none;}
+          button{overflow:visible;}
+          button::-moz-focus-inner{border:0;padding:0;}
+          address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+          a,input,textarea,select,button{outline:0;}
+          menu,ul,ol{list-style:none;}
+          a{text-decoration:none;color:#10b3e2;}
+          a:hover{text-decoration:underline;}
+          label,button,input[type="checkbox"],input[type="radio"]{cursor:pointer;}
+          input[type="text"],input[type="password"]{cursor:text;}
+          label{display:inline-block;*display:inline;*zoom:1;}
+          input[type=checkbox]{width:16px;height:14px;}
+          .small-show{display:none;}
+          .wide-show{display:block;}
+          .wrap a:focus{outline:1px dotted invert;outline-offset:-1px;}
+
+
+          /* video-list style */
+          /* video-list common */
+          .video-items .video-item input[type="checkbox"]{float:left;margin:40px 10px 0 0;}
+          .video-items .video-item .video-thumbnail{position:relative;}
+          .video-items .video-item .video-thumbnail img{max-width:100%;height:100%;}
+          .video-items .video-item .video-thumbnail .video-state{z-index:10;position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;font-size:0;overflow:hidden;}
+          .video-items .video-item .video-thumbnail .video-state .state-message{vertical-align:middle;display:inline-block;text-align:center;font-size:14px;font-weight:bold;color:#fff;}
+          .video-items .video-item .video-thumbnail .video-state .vertical-fix{height:100%;vertical-align:middle;display:inline-block;width:0;}
+          .video-items .video-item .video-thumbnail .video-state .thumbnail-mask{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;background:#000;}
+          .video-items .video-item .video-thumbnail .video-state .thumbnail-mask.opacity{opacity:0.70;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
+          .video-items .video-item .video-thumbnail .play-time{z-index:20;position:absolute;bottom:5px;right:5px;color:#fff;background:#000;font-size:11px;padding:2px 4px;-moz-opacity: 0.80;opacity: 0.80;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);}
+          .video-items .video-item .video-thumbnail .icon-hd,
+          .video-items .video-item .video-thumbnail .icon-hd-s{z-index:20;position:absolute;top:0;right:0;}
+          .video-items .video-item .video-info .video-url a{color:#10b8e9;}
+          .video-items .video-item .video-info .video-url a:hover{text-decoration:underline;}
+          .video-items .video-title a{font-weight:bold;color:#333;}
+          .video-items .video-title a:hover{text-decoration:underline;color:#10b1e0;}
+          .video-items.play-count .play-count{display:none;}
+          .video-items.date .date{display:none;}
+          .video-items.public .public{display:none;}
+          .video-items.playlist .playlist{display:none;}
+          .video-items.video-url .video-url{display:none;}
+          /* puzzle */.videocon { margin:1%; }
+          .video-items.puzzle{overflow:hidden;}
+          .video-items.puzzle .main{margin:0 0 0 0;width:50%;}
+          .video-items.puzzle .main a{height:0;padding-bottom:56.25%;}
+          .video-items.puzzle .main a .title-text{padding:10px;font-size:16px;font-weight:bold;}
+          .video-items.puzzle li{float:left;position:relative;margin:0 0 0.2% 0.5%;width:24.5%;overflow:hidden;}
+          .video-items.puzzle li a{display:block;position:relative;height:0;padding-bottom:56.25%; margin-bottom:2px;margin-left:1px;background:#000;text-align:center;}
+          .video-items.puzzle li a .title{position:absolute;bottom:0;left:0;width:100%;text-align:center;}
+          .video-items.puzzle li a .title-text{color:#fff;position:relative;z-index:100;display:block;padding:3px;}
+          .video-items.puzzle li a .title-bg{position:absolute;bottom:0;left:0;z-index:1;width:100%;height:100%;background:#000;
+            opacity: 0.4;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+          }
+          .video-items.puzzle li a img{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+
+          /* small */
+          @media only screen and (max-width:640px){
+            .video-items.puzzle{border:1px solid #ddd;border-width:1px 1px 0 0;}
+            .video-items.puzzle .main{width:100%;margin:0;}
+            .video-items.puzzle .main a{margin:0;}
+            .video-items.puzzle li{margin:0;width:50%;}
+            .video-items.puzzle li a{margin:0;border:1px solid #ddd;border-width:0 0 1px 1px;}
+            .video-item .video-info>span{display:block;}
+          }
+          </style>
+
+          <style>
+
+
+          .more {
+            background: #eee;
+            text-align: right;
+            padding: 10px;
+          }
+          .more span {
+            padding: 0px;
+            color: 000;
+            font-family: "Segoe UI", sans-serif;
+          }
+
+
+          .featured-article-line {
+            padding: 10px 14px;
+            flex: 2 1 100%;
+            -webkit-flex: 2 1 100%;
+            background: #fff;
+            margin: 4px 6px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid #e4e4e4;
+          }
+          .wraperdaper{
+            text-align: right;
+            background: #fff;
+            padding: 1% 1% 1% 1%;
+          }
+
+          .slidepanels {
+            /* Prevent vertical gaps */
+            text-align: right;
+            line-height: 0;
+            -webkit-column-count: 4;
+            -webkit-column-gap:   8px;
+            -moz-column-count:    4;
+            -moz-column-gap:      8px;
+            column-count:         4;
+            column-gap:           8px;
+          }
+          .cycler{
+            position: relative;
+          }
+
+          .cycler img:first-child{
+            position: relative; z-index: 1;
+          }
+
+          .cycler img:not(:first-child){
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+
+          .cycler img.active{
+            z-index: 3;
+          }
+
+          .slidepanels div img {
+            /* Just in case there are inline attributes */
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 3.6%;
+          }
+
+
+          .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+          }
+
+          .flex-area {
+            flex: 3 1 auto;
+            -webkit-flex: 3 1 auto;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row;
+            flex-flow: row;
+            background: #fff;
+            border: none;
+          }
+
+          .col3lt {
+            flex: 2 1 40%;
+            -webkit-flex: 2 1 40%;
+          }
+          .col3rt {
+            flex: 2 1 60%;
+            -webkit-flex: 2 1 60%;
+          }
+
+          @media only screen and (max-width: 640px) {
+            .flex-area {
+              -webkit-flex-flow: column;
+              flex-flow: column;
+            }
+            section {
+              -webkit-order: 2;
+              order: 2;
+            }
+            .slidepanels {
+              /* Prevent vertical gaps */
+              text-align: right;
+              line-height: 0;
+              -webkit-column-count: 3;
+              -webkit-column-gap:   6px;
+              -moz-column-count:    3;
+              -moz-column-gap:      6px;
+              column-count:         3;
+              column-gap:           6px;
+            }
+          }
+
+          @media only screen and (max-width: 420px) {
+            section {
+              -webkit-flex-flow: column;
+              flex-flow: column;
+            }
+
+            article {
+              flex: 1;
+              -webkit-flex: 1;
+            }
+
+            .slidepanels {
+              /* Prevent vertical gaps */
+              text-align: right;
+              line-height: 0;
+              -webkit-column-count: 2;
+              -webkit-column-gap:   8px;
+              -moz-column-count:    2;
+              -moz-column-gap:      8px;
+              column-count:         2;
+              column-gap:           8px;
+            }
+          }
+
+
+          #notes {
+            border-radius: 1px;
+            overflow: hidden;/*
+            background: #0fa;2cb503;*/
+          }
+          .note {
+            min-height: 45px;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: transform .5s;
+            padding: 8px;
+            margin: 0px 0px 0px;
+            background: #fff;
+          }
+          .note:hover {
+            background-color: rgba(240, 250, 240, 1);
+          }
+          #notes > div:nth-child(n+1) {
+            margin-bottom: 6px;
+          }
+          #notes > div:nth-last-child(2) {
+            margin-bottom: 0;
+          }
+          .note span {
+            font-weight: 400;
+          }
+          @import url(https://fonts.googleapis.com/css?family=Quattrocento);
+          .note span.green {
+            color: #001ba0;
+            /*color: #2196f3;
+            font-weight: 600;*/
+            font-weight: normal;
+            font-family: font-family: 'Quattrocento', Arial, sans-serif;
+            line-height: 24px;
+            font-size: 18px;
+          }
+          .note span.blue {
+            color: #3803b5;
+            font-size: 15px;
+            /*font-weight: 600;*/
+            font-style: normal;
+            line-height: 17px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+          }
+          .note span.red,
+          i.red {
+            color: #c77300;
+          }
+          .note span.small {
+            font-size: 13px;
+          }
+          .note span.offset {
+            margin-left: 25px;
+          }
+          .note .line.med {
+            color: #444;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: sans-serif;
+          }
+          .note .line.small {
+            color: #444;
+            font-size: 14px;
+            font-family: '나눔고딕',NanumGothic,'맑은 고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',sans-serif;
+          }
+          .note .line.large {
+            margin-top: 2px;
+            font-size: 24px;
+            font-weight: 400;
+          }
+          .note .mt {
+            margin-top: 4px;
+          }
+          .double {
+            transition: transform .5s;
+          }
+          .double .note {
+            width: 42.3%;
+            float: left;
+            margin-bottom: 0;
+          }
+          .double .note:first-child {
+            margin-right: 6px;
+          }
+          .group:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          .tr {
+            transform: translate(350px, 0);
+          }
+          #no-cards {
+            display: none;
+            margin-top: 5px;
+          }
+          #no-cards .line {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 400;
+            text-shadow: 0 2px 1px hsla(0, 0%, 40%, .1);
+          }
+          .note ul li a { font-size: 13px;padding: 2px;font-color: #0099ff;}
+
+
+
+          </style>
