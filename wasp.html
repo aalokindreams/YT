@@ -1,0 +1,312 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="row">
+        <div>
+            <svg class="logopin" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" data-reactid="31">
+        <path d="M0.00,12.00 C0.00,17.12 3.21,21.50 7.73,23.22 C7.62,22.28 7.50,20.74 7.75,19.65 C7.97,18.72 9.16,13.71 9.16,13.71 C9.16,13.71 8.80,13.00 8.80,11.94 C8.80,10.28 9.76,9.04 10.96,9.04 C11.98,9.04 12.47,9.80 12.47,10.72 C12.47,11.75 11.82,13.28 11.48,14.70 C11.20,15.89 12.08,16.86 13.25,16.86 C15.37,16.86 17.01,14.62 17.01,11.39 C17.01,8.53 14.95,6.53 12.02,6.53 C8.62,6.53 6.62,9.08 6.62,11.71 C6.62,12.74 7.02,13.84 7.51,14.44 C7.61,14.56 7.62,14.66 7.59,14.78 C7.50,15.16 7.30,15.97 7.26,16.14 C7.21,16.35 7.09,16.40 6.86,16.30 C5.37,15.60 4.44,13.42 4.44,11.67 C4.44,7.90 7.18,4.44 12.33,4.44 C16.48,4.44 19.70,7.39 19.70,11.34 C19.70,15.46 17.10,18.77 13.50,18.77 C12.29,18.77 11.15,18.14 10.76,17.40 C10.76,17.40 10.16,19.68 10.02,20.24 C9.73,21.32 8.95,22.69 8.47,23.47 C9.58,23.82 10.77,24.00 12.00,24.00 C18.63,24.00 24.00,18.63 24.00,12.00 C24.00,5.37 18.63,0.00 12.00,0.00 C5.37,0.00 0.00,5.37 0.00,12.00" data-reactid="33"></path>
+      </svg>
+        </div>
+        <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+            <div width="100%" class="form_container">
+                <div class="d3 float-right" style="width:100%;">
+                    <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Web 'em up">
+                </div>
+                <button class="" type="submit" id="search-btn" name="search-btn" value="">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 57.966 57.966" class="srchicon">
+                    <path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"></path>
+                  </svg>
+        </button>
+            </div>
+        </form>
+        <div class="hidemob">
+            <svg class="icons" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" data-reactid="78"><path class="ds-shape-primary" d="M19,9 C20.654,9 22,7.654 22,6 C22,4.346 20.654,3 19,3 C17.698,3 16.599,3.838 16.185,5 L2,5 L2,7 L16.185,7 C16.599,8.162 17.698,9 19,9 Z M19,5 C19.551,5 20,5.449 20,6 C20,6.553 19.551,7 19,7 C18.449,7 18,6.553 18,6 C18,5.449 18.449,5 19,5 Z M9,9 C10.302,9 11.401,9.838 11.815,11 L22,11 L22,13 L11.815,13 C11.401,14.162 10.301,15 9,15 C7.699,15 6.599,14.162 6.185,13 L2,13 L2,11 L6.185,11 C6.599,9.838 7.698,9 9,9 Z M9,13 C9.551,13 10,12.553 10,12 C10,11.449 9.551,11 9,11 C8.449,11 8,11.449 8,12 C8,12.553 8.449,13 9,13 Z M19,15 C20.654,15 22,16.346 22,18 C22,19.654 20.654,21 19,21 C17.699,21 16.599,20.162 16.185,19 L2,19 L2,17 L16.185,17 C16.599,15.838 17.698,15 19,15 Z M19,19 C19.551,19 20,18.553 20,18 C20,17.449 19.551,17 19,17 C18.449,17 18,17.449 18,18 C18,18.553 18.449,19 19,19 Z"></path></svg>
+        </div>
+        <div class="hidemob">
+            <svg class="icons" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" data-reactid="89"><title data-reactid="90"></title><path class="ds-shape-primary" d="M12,2 C14.7158333,2 15.0566667,2.01166667 16.1233333,2.06 C17.7483333,2.13416667 19.1758333,2.5325 20.3216667,3.67833333 C21.4675,4.82416667 21.8658333,6.25166667 21.94,7.87666667 C21.9883333,8.94333333 22,9.28416667 22,12 C22,14.7158333 21.9883333,15.0566667 21.94,16.1233333 C21.8658333,17.7483333 21.4675,19.1758333 20.3216667,20.3216667 C19.1758333,21.4675 17.7483333,21.8658333 16.1233333,21.94 C15.0566667,21.9883333 14.7158333,22 12,22 C9.28416667,22 8.94333333,21.9883333 7.87666667,21.94 C6.25166667,21.8658333 4.82416667,21.4675 3.67833333,20.3216667 C2.5325,19.1758333 2.13416667,17.7483333 2.06,16.1233333 C2.01166667,15.0566667 2,14.7158333 2,12 C2,9.28416667 2.01166667,8.94333333 2.06,7.87666667 C2.13416667,6.25166667 2.5325,4.82416667 3.67833333,3.67833333 C4.82416667,2.5325 6.25166667,2.13416667 7.87666667,2.06 C8.94333333,2.01166667 9.28416667,2 12,2 Z M12,3.80166667 C9.33,3.80166667 9.01333333,3.81166667 7.95916667,3.86 C6.82083333,3.91166667 5.765,4.14 4.9525,4.9525 C4.14,5.765 3.91166667,6.82083333 3.86,7.95916667 C3.81166667,9.01333333 3.80166667,9.33 3.80166667,12 C3.80166667,14.67 3.81166667,14.9866667 3.86,16.0408333 C3.91166667,17.1791667 4.14,18.235 4.9525,19.0475 C5.765,19.86 6.82083333,20.0883333 7.95916667,20.14 C9.01333333,20.1883333 9.33,20.1983333 12,20.1983333 C14.67,20.1983333 14.9866667,20.1883333 16.0408333,20.14 C17.1791667,20.0883333 18.235,19.86 19.0475,19.0475 C19.86,18.235 20.0883333,17.1791667 20.14,16.0408333 C20.1883333,14.9866667 20.1983333,14.67 20.1983333,12 C20.1983333,9.33 20.1883333,9.01333333 20.14,7.95916667 C20.0883333,6.82083333 19.86,5.765 19.0475,4.9525 C18.235,4.14 17.1791667,3.91166667 16.0408333,3.86 C14.9866667,3.81166667 14.67,3.80166667 12,3.80166667 Z M12,6.865 C14.8358333,6.865 17.135,9.16416667 17.135,12 C17.135,14.8358333 14.8358333,17.135 12,17.135 C9.16416667,17.135 6.865,14.8358333 6.865,12 C6.865,9.16416667 9.16416667,6.865 12,6.865 Z M12,15.3333333 C13.8408333,15.3333333 15.3333333,13.8408333 15.3333333,12 C15.3333333,10.1591667 13.8408333,8.66666667 12,8.66666667 C10.1591667,8.66666667 8.66666667,10.1591667 8.66666667,12 C8.66666667,13.8408333 10.1591667,15.3333333 12,15.3333333 Z M17.3383333,7.86166667 C18.001075,7.86166667 18.5383333,7.32440837 18.5383333,6.66166667 C18.5383333,5.99892497 18.001075,5.46166667 17.3383333,5.46166667 C16.6755916,5.46166667 16.1383333,5.99892497 16.1383333,6.66166667 C16.1383333,7.32440837 16.6755916,7.86166667 17.3383333,7.86166667 Z"></path></svg>
+        </div>
+        <div class="hidemob">
+            <svg class="icons" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path class="ds-shape-primary" d="M8.45335977,5.26780327 L7.30591765,4.12036115 C5.38014036,5.58876621 4.11233708,7.85155458 4,10.4192574 L5.60481415,10.4192574 C5.7251753,8.29287829 6.81644917,6.43129352 8.45335977,5.26780327 L8.45335977,5.26780327 Z M18.3951857,10.4192574 L20,10.4192574 C19.8796392,7.85155458 18.6118359,5.58876621 16.6940833,4.12036115 L15.5546651,5.26780327 C17.1755279,6.43129352 18.2748249,8.29287829 18.3951857,10.4192574 L18.3951857,10.4192574 Z M16.8144426,10.820461 C16.8144426,8.35707119 15.4984953,6.29488462 13.2036103,5.74924749 L13.2036103,5.20361076 C13.2036103,4.53761286 12.6659974,4 11.9999995,4 C11.3340016,4 10.7963888,4.53761286 10.7963888,5.20361076 L10.7963888,5.74924749 C8.49348028,6.29488462 7.1855565,8.34904693 7.1855565,10.820461 L7.1855565,14.8324968 L5.58074215,16.4373112 L5.58074215,17.2397183 L18.4192569,17.2397183 L18.4192569,16.4373112 L16.8144426,14.8324968 L16.8144426,10.820461 L16.8144426,10.820461 Z M11.9999995,19.6469399 C12.1123368,19.6469399 12.2166498,19.6389155 12.3209621,19.6148428 C12.8425264,19.5025062 13.2678028,19.1494467 13.4764288,18.6680021 C13.5566698,18.4754246 13.5967896,18.2667985 13.5967896,18.0421239 L10.3871609,18.0421239 C10.3951852,18.9247721 11.109327,19.6469383 11.9999995,19.6469383 L11.9999995,19.6469399 L11.9999995,19.6469399 Z"></path></svg>
+        </div>
+    </div>
+
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .row {
+            position: relative;
+            display: flex;
+            background: #ffffff;
+            justify-content: space-between;
+            width: 100%;
+            top: 0px;
+            padding: 0.2rem;
+        }
+
+        .logopin {
+            fill: #000000;
+            width: 3rem;
+            margin: 3px 5px;
+            -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+            transition: .2s ease;
+        }
+
+        .icons {
+            fill: #000000;
+            width: 3rem;
+            -webkit-transform: translate(0px, 8px);
+            transform: translate(0px, 8px);
+            transition: .2s ease;
+            height: 3rem;
+        }
+
+        .srchicon {
+            fill: #000000;
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            .icons {
+                display: block;
+                margin: 3px 1rem;
+            }
+            .hidemob {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 601px) {
+            .icons {
+                display: block;
+                margin: 3px 1.4rem;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .icons {
+                display: block;
+                margin: 0px 2.5rem;
+            }
+        }
+
+        .form_container {
+            display: flex;
+        }
+
+        .total-results {
+            display: inline-block;
+        }
+
+        @media(max-width:360px) {
+            .total-results {
+                display: block;
+            }
+        }
+
+        .form-inline {
+            margin: 0.3rem 0.5rem 0.3rem 0.1rem;
+            width: 100%;
+            border: 3px solid #000000;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 10px;
+            padding: 0rem 0.6rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+
+        .search-field {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 3.2rem;
+            border: 4px;
+            border-radius: 10px;
+            outline: none;
+            padding: 0.3rem 1.3rem;
+            background: rgb(255, 255, 255);
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+
+
+    <div class="scrollmenu">
+        <a href="#news">Photos</a>
+        <a href="#contact" class="on">Videos</a>
+        <a href="#about">Audio</a>
+        <a href="#blog">Shopping</a>
+        <a href="#tools">Blog</a>
+        <a href="#more">More</a>
+        <a href="#support">Social</a>
+    </div>
+    <style>
+        .scrollmenu {
+            overflow: auto;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .scrollmenu a {
+            display: inline-block;
+            color: #666666;
+            font-size: 1rem;
+            text-align: center;
+            padding: 0rem 1.6rem 0rem 1.6rem;
+            text-decoration: none;
+            font-family: "Open sans";
+        }
+
+        .on {
+            color: #000000 !important;
+            border-bottom: 2px solid #000;
+            font-size: 1.6rem !important;
+        }
+
+        .scrollmenu a:hover {
+            color: #000000;
+        }
+
+    </style>
+    <div class="R6-Wf">
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More computer images" href="/search/photos/computer">computer</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More laptop images" href="/search/photos/laptop">laptop</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More screen images" href="/search/photos/screen">screen</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More work images" href="/search/photos/work">work</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More office images" href="/search/photos/office">office</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More desk images" href="/search/photos/desk">desk</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More monitor images" href="/search/photos/monitor">monitor</a></div>
+        </div>
+
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More keyboard images" href="/search/photos/keyboard">keyboard</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More macbook images" href="/search/photos/macbook">macbook</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More working images" href="/search/photos/working">working</a></div>
+        </div>
+        <div class="_3sVnM _3TUA0">
+            <div class="x1MBX"><a class="_2634o _1CBrG _1ByhS xLon9 _2bG1V" title="More workspace images" href="/search/photos/workspace">workspace</a></div>
+        </div>
+    </div>
+
+    <style>
+        ._2Ru_P {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        ._3b4NQ {
+            box-sizing: content-box;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+
+        .R6-Wf {
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            overflow: scroll;
+            width: 100%;
+        }
+
+        .R6-Wf::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+        .R6-Wf::-webkit-scrollbar-thumb {
+            background-color: #555;
+        }
+
+        ._3TUA0 {
+            flex-basis: 120px;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            flex-shrink: 0;
+            max-width: 250px;
+            padding-left: 4px;
+            padding-right: 4px;
+
+        }
+
+        .x1MBX {
+            margin: 12px 2px;
+            overflow: hidden;
+            background-position: 50%;
+            box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.34);
+            background-size: cover;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        ._2634o {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1;
+            text-shadow: 0 0 8px rgba(0, 0, 0, .3);
+            text-transform: capitalize;
+            display: block;
+            background-color: rgba(0, 0, 0, 1);
+            transition: background-color .15s ease-in-out;
+            text-decoration: none;
+            padding: 13px;
+            color: #fff;
+        }
+
+    </style>
+</body>
+
+</html>

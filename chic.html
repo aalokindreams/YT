@@ -1,0 +1,90 @@
+<html>
+
+<head>
+
+    <meta charset='UTF-8' />
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .tabcontent {
+            padding: 0.4rem 0.4rem;
+            background: #05d851;
+        }
+
+        body {
+            font-size: 14px;
+            font-family: "coltan gea", 'Open Sans', sans-serif;
+        }
+
+        .scrollmenu {
+            overflow: auto;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .raditechtwo {
+            margin: 0.4rem;
+            box-shadow: 0px 1px 10px #0000004d;
+            background: #ffffff;
+        }
+
+        .raditae {
+            display: flex;
+            color: #000000;
+        }
+
+        .raditspan {
+            padding: 0 0.6rem;
+        }
+
+    </style>
+
+    <div id="app"></div>
+
+    <script>
+        fetch('https://api.reddit.com/r/kpopfap/new/?sort=new&t=all')
+            .then(res => res.json())
+            .then(res => res.data.children)
+            .then(res => res.map(post => ({
+                author: post.data.author,
+                link: post.data.url,
+                img: post.data.thumbnail,
+                title: post.data.title
+            })))
+            .then(res => res.map(render))
+            .then(res => console.log(res))
+        const app = document.querySelector('#app');
+        const render = post => {
+            const node = document.createElement('div');
+            node.innerHTML = `
+            <h2 class="raditechtwo">
+              <a href="${post.link}" class="raditae">
+                <img src="${post.img}" class="raditimg" />
+                <span class="raditspan">${post.title}</span>
+              </a>
+           </h2>`;
+            app.appendChild(node);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+
+<html><head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>RadIt</title>
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    </head>
+    <body>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .row {
+        position: relative;
+        display: flex;
+        background: #ffffff;
+        justify-content: space-between;
+        width: 100%;
+        top: 0px;
+        padding: 0 0.2rem;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .icons {
+        fill: #000000;
+        width: 2.8rem;
+        transition: .2s ease;
+        height: 2.8rem;
+    }
+
+    .srchicon {
+        fill: #000000;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .icons {
+            display: block;
+            margin: 3px 0.4rem;
+        }
+    }
+
+    @media screen and (max-width: 1199px) and (min-width: 601px) {
+        .icons {
+            display: block;
+            margin: 3px 1.4rem;
+        }
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        .icons {
+            display: block;
+            margin: 0px 1rem;
+        }
+    }
+
+    .form_container {
+        display: flex;
+    }
+
+    .total-results {
+        display: inline-block;
+    }
+
+    @media(max-width:360px) {
+        .total-results {
+            display: block;
+        }
+    }
+
+    .form-inline {
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+    button {
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 10px;
+        padding: 0rem 0.6rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+
+    .search-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.9rem;
+    padding-left: 0.5rem;
+    border-radius: 10px;
+    border: 4px;
+    background: rgb(255, 255, 255);
+    color: #000;
+    font-size: 1.1rem;
+}
+
+    * {
+        margin: 0;
+        outline: none;
+        padding: 0;
+        text-decoration: none;
+    }
+.formcon {
+    padding: 0.3rem;
+    display: flex;
+    background: #ffffff;
+    justify-content: center;
+}
+</style>
+        
+    
+<div class="trdcon">
+
+<div class="v-tab">
+  
+    <div class="v-tab_container">
+    
+      <div id="vtab1" class="v-tab_content" style="display: block;">
+         
+        <div class="row">
+            <div class="hidemob">
+                <svg class="icons" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path class="ds-shape-primary" d="M17.3035,12.3553542 L15.8855,10.9413542 L17.3005,9.52535424 C18.0865,8.73835424 18.0805,7.47835424 17.3005,6.69835424 C16.926401,6.32199595 16.4176559,6.1103691 15.887,6.1103691 C15.3563441,6.1103691 14.847599,6.32199595 14.4735,6.69835424 L11.6435,9.52835424 C11.2673888,9.90258498 11.055933,10.4112807 11.055933,10.9418542 C11.055933,11.4724278 11.2673888,11.9811235 11.6435,12.3553542 L10.2325,13.7633542 L9.5265,13.0573542 C8.35452527,11.8866831 8.35318227,9.98768188 9.5235,8.81535424 L13.0635,5.27435424 C14.6235,3.71435424 17.1575,3.72435424 18.7175,5.28435424 C20.2774228,6.84575286 20.278765,9.37530113 18.7205,10.9383542 L17.3035,12.3553542 Z M6.6965,11.6483542 L6.6965,11.6453542 L8.1105,13.0553542 L6.6965,14.4743542 C6.32032854,14.8487561 6.10884822,15.3576173 6.10884822,15.8883542 C6.10884822,16.4190912 6.32032854,16.9279524 6.6965,17.3023542 C7.4835,18.0873542 8.7435,18.0823542 9.5235,17.3023542 L12.3535,14.4723542 C13.1405,13.6853542 13.1335,12.4253542 12.3535,11.6453542 L13.7635,10.2353542 L14.4665,10.9403542 C15.030445,11.5017496 15.3479792,12.264373 15.3491047,13.0601101 C15.3502302,13.8558472 15.0348546,14.6193658 14.4725,15.1823542 L10.9325,18.7223542 C9.37127394,20.281263 6.8420697,20.2799201 5.2825,18.7193542 C3.72257721,17.1579556 3.72123504,14.6284074 5.2795,13.0653542 L6.6965,11.6483542 Z"></path></svg>
+            </div>
+            
+      <h1>RadIt</h1>
+
+            <div class="hidemob">
+                <svg class="icons" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img" data-reactid="78"><path class="ds-shape-secondary" d="M11,18.2606347 L11,11 L21.9958578,11 L21.9958578,18.2606347 L20.143086,18.2606347 L20.143086,22.5200005 L16.2522372,18.2606347 L11,18.2606347 Z M16.7436207,17.1462268 L19.028678,19.6477105 L19.028678,17.1462268 L20.8814498,17.1462268 L20.8814498,12.114408 L12.114408,12.114408 L12.114408,17.1462268 L16.7436207,17.1462268 Z"></path><polygon class="ds-shape-primary" points="5.598 13.24 3.119 13.24 3.119 5.119 16.878 5.119 16.878 9.97 17.996 9.97 17.996 4 2 4 2 14.359 4.48 14.359 4.48 18.23 8.369 14.359 9.96 14.359 9.96 13.24 7.908 13.24 5.598 15.539"></polygon></svg>
+            </div>
+            
+            
+        </div>
+    <div class="tabcontent">
+        
+    <div id="app"></div>
+</div>      
+</div>
+      <!-- #tab1 -->
+    
+      <div id="vtab2" class="v-tab_content" style="display: none;">
+        <div class="formcon">
+            <form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+        <div width="100%" class="form_container">
+            <div class="d3 float-right" style="width:100%;">
+                <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="Web 'em up">
+            </div>
+            <button class="" type="submit" id="search-btn" name="search-btn" value="">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 57.966 57.966" class="srchicon">
+                <path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"></path>
+              </svg>
+    </button>
+        </div>
+    </form>
+</div>
+        <div class="tabcontent">
+    <p>Dui sociosqu vitae varius nulla habitasse inceptos pharetra feugiat curabitur, nibh molestie est semper mattis malesuada viverra auctor, duis pulvinar quam diam scelerisque ut nullam condimentum ut per conubia feugiat ultricies tristique dictum.
+    
+    </p></div>
+      </div>
+      <!-- #tab2 -->
+    
+      <div id="vtab3" class="v-tab_content" style="display: none;">
+        <div class="tabcontent">
+            <p>Morbi cursus dapibus ut donec commodo consequat arcu turpis hendrerit luctus nulla aliquam tempor diam massa faucibus vitae vehicula, ultricies volutpat nullam phasellus dui auctor senectus morbi tellus potenti iaculis bibendum ipsum sodales non.
+    
+    </p>
+    </div>
+      </div>
+      <!-- #tab3 -->
+    
+      <div id="vtab4" class="v-tab_content" style="display: none;">
+        <div class="tabcontent">
+            <p>Per ligula mollis vulputate tortor urna platea non maecenas fames, maecenas ante senectus suspendisse ultrices aptent torquent laoreet scelerisque ut integer arcu magna ultricies mollis.
+    
+    </p>
+    </div>
+      </div>
+      <!-- #tab4 --> 
+    
+      <div id="vtab5" class="v-tab_content" style="display: none;">
+        <div class="tabcontent">
+            <p>Per ligula mollis vulputate tortor urna platea non maecenas fames, maecenas ante senectus suspendisse ultrices aptent torquent laoreet scelerisque ut integer arcu magna ultricies mollis.
+    
+    </p>
+    </div>
+      </div>
+      <!-- #tab5 --> 
+    </div>
+    <ul class="v-tab_tab-head">
+            <li rel="vtab1" class="active"><svg viewBox="0 0 24 24" width="100%" height="100%" class="bottabs">
+              <path class="ds-shape-primary" d="M12,2 C14.7158333,2 15.0566667,2.01166667 16.1233333,2.06 C17.7483333,2.13416667 19.1758333,2.5325 20.3216667,3.67833333 C21.4675,4.82416667 21.8658333,6.25166667 21.94,7.87666667 C21.9883333,8.94333333 22,9.28416667 22,12 C22,14.7158333 21.9883333,15.0566667 21.94,16.1233333 C21.8658333,17.7483333 21.4675,19.1758333 20.3216667,20.3216667 C19.1758333,21.4675 17.7483333,21.8658333 16.1233333,21.94 C15.0566667,21.9883333 14.7158333,22 12,22 C9.28416667,22 8.94333333,21.9883333 7.87666667,21.94 C6.25166667,21.8658333 4.82416667,21.4675 3.67833333,20.3216667 C2.5325,19.1758333 2.13416667,17.7483333 2.06,16.1233333 C2.01166667,15.0566667 2,14.7158333 2,12 C2,9.28416667 2.01166667,8.94333333 2.06,7.87666667 C2.13416667,6.25166667 2.5325,4.82416667 3.67833333,3.67833333 C4.82416667,2.5325 6.25166667,2.13416667 7.87666667,2.06 C8.94333333,2.01166667 9.28416667,2 12,2 Z M12,3.80166667 C9.33,3.80166667 9.01333333,3.81166667 7.95916667,3.86 C6.82083333,3.91166667 5.765,4.14 4.9525,4.9525 C4.14,5.765 3.91166667,6.82083333 3.86,7.95916667 C3.81166667,9.01333333 3.80166667,9.33 3.80166667,12 C3.80166667,14.67 3.81166667,14.9866667 3.86,16.0408333 C3.91166667,17.1791667 4.14,18.235 4.9525,19.0475 C5.765,19.86 6.82083333,20.0883333 7.95916667,20.14 C9.01333333,20.1883333 9.33,20.1983333 12,20.1983333 C14.67,20.1983333 14.9866667,20.1883333 16.0408333,20.14 C17.1791667,20.0883333 18.235,19.86 19.0475,19.0475 C19.86,18.235 20.0883333,17.1791667 20.14,16.0408333 C20.1883333,14.9866667 20.1983333,14.67 20.1983333,12 C20.1983333,9.33 20.1883333,9.01333333 20.14,7.95916667 C20.0883333,6.82083333 19.86,5.765 19.0475,4.9525 C18.235,4.14 17.1791667,3.91166667 16.0408333,3.86 C14.9866667,3.81166667 14.67,3.80166667 12,3.80166667 Z M12,6.865 C14.8358333,6.865 17.135,9.16416667 17.135,12 C17.135,14.8358333 14.8358333,17.135 12,17.135 C9.16416667,17.135 6.865,14.8358333 6.865,12 C6.865,9.16416667 9.16416667,6.865 12,6.865 Z M12,15.3333333 C13.8408333,15.3333333 15.3333333,13.8408333 15.3333333,12 C15.3333333,10.1591667 13.8408333,8.66666667 12,8.66666667 C10.1591667,8.66666667 8.66666667,10.1591667 8.66666667,12 C8.66666667,13.8408333 10.1591667,15.3333333 12,15.3333333 Z M17.3383333,7.86166667 C18.001075,7.86166667 18.5383333,7.32440837 18.5383333,6.66166667 C18.5383333,5.99892497 18.001075,5.46166667 17.3383333,5.46166667 C16.6755916,5.46166667 16.1383333,5.99892497 16.1383333,6.66166667 C16.1383333,7.32440837 16.6755916,7.86166667 17.3383333,7.86166667 Z"></path>
+            </svg></li>
+            <li rel="vtab2" class=""><svg class="bottabs" viewBox="0 0 32 32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%" width="100%" height="100%">
+              <circle cx="14" cy="14" r="11"></circle>
+              <path d="M23 23 L29 29"></path>
+            </svg></li>
+            <li rel="vtab3" class=""><svg viewBox="0 0 24 24" width="100%" height="100%" class="bottabs" style="
+          fill: #000000;
+      ">
+              
+              <path class="ds-shape-primary" d="M19,9 C20.654,9 22,7.654 22,6 C22,4.346 20.654,3 19,3 C17.698,3 16.599,3.838 16.185,5 L2,5 L2,7 L16.185,7 C16.599,8.162 17.698,9 19,9 Z M19,5 C19.551,5 20,5.449 20,6 C20,6.553 19.551,7 19,7 C18.449,7 18,6.553 18,6 C18,5.449 18.449,5 19,5 Z M9,9 C10.302,9 11.401,9.838 11.815,11 L22,11 L22,13 L11.815,13 C11.401,14.162 10.301,15 9,15 C7.699,15 6.599,14.162 6.185,13 L2,13 L2,11 L6.185,11 C6.599,9.838 7.698,9 9,9 Z M9,13 C9.551,13 10,12.553 10,12 C10,11.449 9.551,11 9,11 C8.449,11 8,11.449 8,12 C8,12.553 8.449,13 9,13 Z M19,15 C20.654,15 22,16.346 22,18 C22,19.654 20.654,21 19,21 C17.699,21 16.599,20.162 16.185,19 L2,19 L2,17 L16.185,17 C16.599,15.838 17.698,15 19,15 Z M19,19 C19.551,19 20,18.553 20,18 C20,17.449 19.551,17 19,17 C18.449,17 18,17.449 18,18 C18,18.553 18.449,19 19,19 Z"></path>
+            </svg><h3>heading here</h3></li>
+            <li rel="vtab4" class=""><svg viewBox="0 0 24 24" width="100%" height="100%" class="bottabs">
+              <path class="ds-shape-primary" d="M12,20.5 C12,20.5 21,13.9006347 21,9.0109801 C21,3.3701782 13.6358327,1.58587628 12,8.44761965 C10.3641673,1.58587628 3,3.3701782 3,9.0109801 C3,13.9006347 12,20.5 12,20.5 Z M17.2554469,3.05098012 C19.9614383,3.4391914 22,5.86883873 22,9.0109801 C22,10.1595258 21.6072135,11.3779463 20.8857109,12.663522 C20.0490563,14.154276 18.7861902,15.7093844 17.2088365,17.2944834 C16.1991713,18.3091063 15.1205649,19.2758087 14.0420872,20.1642715 C13.6645347,20.4753038 13.3135493,20.7546709 12.9978403,20.9984202 C12.8065357,21.1461207 12.6681193,21.250123 12.5913267,21.3064321 C12.2393512,21.5645226 11.7606488,21.5645226 11.4086733,21.3064321 C11.3318808,21.250123 11.1934643,21.1461207 11.0021598,20.9984202 C10.6864507,20.7546709 10.3354653,20.4753038 9.95791282,20.1642715 C8.87943509,19.2758087 7.80082875,18.3091063 6.79116356,17.2944834 C5.21380984,15.7093844 3.95094373,14.154276 3.11428913,12.663522 C2.39278655,11.3779463 2,10.1595258 2,9.0109801 C2,5.86883873 4.03856168,3.4391914 6.7445531,3.05098012 C8.85367381,2.74839807 10.789654,3.74510153 12,5.76436844 C13.210346,3.74510153 15.1463262,2.74839807 17.2554469,3.05098012 Z"></path>
+            </svg></li>
+            
+            
+            <li rel="vtab5" class=""><svg class="bottabs" viewBox="0 0 32 32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%" width="100%" height="100%">
+              <path d="M6 4 L26 4 26 30 16 20 6 30 Z"></path>
+            </svg></li>
+          </ul>
+    </div>
+</div>
+
+    
+    <style>
+    .v-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-tab_tab-head {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 600px;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+}
+.v-tab_tab-head li {
+    cursor: pointer;
+    height: 3rem;
+    background: #f3f3f3;
+    border-bottom: 0px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    text-decoration: none;
+}
+.v-tab_tab-head li:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+.v-tab_tab-head li.active {
+    background-color: #fff;
+    color: #94399e;
+    display: block;
+    color: #000000 !important;
+    border-top: 3px solid #000;
+    font-size: 1.6rem !important;
+}
+
+.v-tab_container {
+    float: left;
+    width: 100%;
+    height: 100%;
+    min-height: 132px;
+}
+
+.v-tab_content {
+  /*padding: 10px 20px;*/
+  display: none;
+}
+.v-tab_content > :first-child {
+  margin-top: 0;
+}
+.bottab {
+    height: 3rem;
+    width: 3rem;
+}
+.tabcontent {
+    padding: 0.4rem 0.4rem;
+    box-shadow: inset 0 0 12px #e2e2e2;
+    background: #ececec;
+}
+
+body {
+  font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto;
+  font-family: "Syne",'Open Sans', sans-serif;
+}
+
+    </style>
+            <style>
+                .scrollmenu {
+                    overflow: auto;
+                    white-space: nowrap;
+                    text-transform: uppercase;
+                }
+        
+        
+            </style>
+            
+<script>
+
+    $(".v-tab_content").hide();
+    $(".v-tab_content:first").show();
+
+    $(".v-tab_tab-head li").click(function() {
+	
+      $(".v-tab_content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();		
+      $(".v-tab_tab-head li").removeClass("active");
+      $(this).addClass("active");
+
+	  
+    });
+
+	
+</script>
+<script>
+//        fetch('https://api.reddit.com/r/technology/top/?sort=top&t=all')
+    fetch('https://api.reddit.com/r/worldnews/new/?sort=new&t=all')
+  .then(res=>res.json())
+        .then(res=>res.data.children)
+        .then(res=>res.map(post=>({
+          author: post.data.author,
+          link: post.data.url,
+          img: post.data.thumbnail,
+          title: post.data.title
+        })))
+        .then(res=>res.map(render))
+        .then(res=>console.log(res))
+        const app = document.querySelector('#app');
+        const render = post => {
+          const node = document.createElement('div');
+          node.innerHTML = `
+            <h2 class="raditechtwo">
+              <a href="${post.link}" class="raditae">
+                <img src="${post.img}" class="raditimg" />
+                <span class="raditspan">${post.title}</span>
+              </a>
+           </h2>`;
+          app.appendChild(node);
+        }
+        </script>
+        
+        <style>
+.raditechtwo {
+    margin-bottom: 0.4rem;
+    box-shadow: 1px 2px 10px #00000014;
+    background: #ffffff;
+}
+.raditae {
+    display: flex;
+    color: #000000;
+}
+.trdcon {
+    background: #ffffff;
+}
+.raditspan {
+    padding: 0 0.6rem;
+}    
+
+            </style>
+</body></html>
