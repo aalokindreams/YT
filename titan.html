@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0d0c5;
+}
+.grid  {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    position: relative;
+    display: block;
+    margin: 0.1rem;
+    cursor: pointer;
+    -webkit-flex-grow: 1; /* Safari 6.1+ */
+  -webkit-flex-shrink: 1; /* Safari 6.1+ */
+  -webkit-flex-basis: 100px; /* Safari 6.1+ */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100px;
+}
+.item img {
+    height: 15rem;
+    width: auto;
+}
+@media (max-width: 520px) {
+.item {
+    width: 50% !important;
+  }
+  .item img {
+    width: 100%;
+    height: auto;
+}
+
+}
+
+    </style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+<div class="grid" id="zettai-ryouiki"></div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://unpkg.com/packery@2/dist/packery.pkgd.js'></script>
+
+  
+
+    <script >
+      
+
+var Settings = {
+  subreddit : 'pics',
+  after: 'new',
+  limit: 25
+}
+
+
+let $grid = $('#zettai-ryouiki')
+  .attr('data-loading-text','loading');
+
+function RedditJSON(){  
+  this.loadLink = function(){
+    Settings.isLoading = true;
+    return 'https://www.reddit.com/r/' + Settings.subreddit + '/.json?after=' + Settings.after + '&limit=' + Settings.limit;
+  }
+  
+  this.next = function(feed){
+    if (Settings.theLast) return;
+    if (feed.data.after == null) Settings.theLast = true;
+    let posts = feed.data.children;
+    for(let i = 0; i < posts.length; i++){
+      if(true){ // posts[i].data.post_hint == 'image' || posts[i].data.url.search('imgur')
+        if(!posts[i].data.hasOwnProperty('preview')) continue;
+        
+        let image = posts[i].data.preview.images[0];
+        image.source.url = image.source.url.replace('amp;',''); // cheeky link bug 
+        
+        let elem    = $('<div>').addClass('item');
+        let bars    = $('<a>').addClass('boom').attr({href: image.source.url}).appendTo(elem);
+        let zoom    = $('<img>').addClass('zoom').attr({src: image.source.url}).appendTo(bars);
+        
+        $grid.append(elem).packery('appended', elem);
+      }
+    }
+    
+    Settings.after = feed.data.after;
+    Settings.isLoading = false;
+  }
+}
+
+var bob = new RedditJSON();
+
+function loadNext(){
+  if (Settings.isLoading){
+    setTimeout(loadNext,100);
+    return;
+  } else {
+    $.getJSON(bob.loadLink(), bob.next);
+  }
+}
+
+$(function() {
+  // return;
+  loadNext();
+  $(window).scroll(function () {    
+    console.log($(window).scrollTop() + ' ' + ($('body').height() - $(window).height() - 10));
+    if ($(window).scrollTop() >= $('body').height() - $(window).height() - 10 && !Settings.isLoading) {
+      loadNext();
+    }
+  });
+});
+    </script>
+</body>
+</html>
