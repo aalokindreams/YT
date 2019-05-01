@@ -60,7 +60,7 @@
     <div id="app"></div>
 
     <script>
-        fetch('https://api.reddit.com/r/kpopfap/new/?sort=new&t=all')
+        fetch('https://api.reddit.com/r/pics/new/?sort=new&t=all')
             .then(res => res.json())
             .then(res => res.data.children)
             .then(res => res.map(post => ({
